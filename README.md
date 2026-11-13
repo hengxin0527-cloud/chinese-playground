@@ -69,3 +69,4 @@ wǒ xǐ huan… · I like …
 qiú zài nǎ lǐ? · Where is the ball?
 球在篮筐旁边。 / The ball is beside the hoop.
 课堂建议：先看场景 → 点击学词 → 模仿动作 → 用完整句回答 → 完成小测。可让孩子轮流当“小老师”。
+Redeploy GitHub Pages
