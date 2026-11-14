@@ -1,99 +1,873 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>运动乐园｜互动普通话课件</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e9f6fc">
+<title>运动乐园 Sports World｜互动普通话课堂 V5 · 校对版</title>
 <style>
-:root{--ink:#18324a;--blue:#1769aa;--gold:#ffbd45;--muted:#62788c;--shadow:0 12px 30px #153a5720}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#e8f7ff,#fff8e9 60%,#e9f7ef);font-family:system-ui,"Noto Sans SC",sans-serif;color:var(--ink)}
-button{font:inherit;cursor:pointer;border:0}.app{max-width:1480px;margin:auto;padding:18px}
-header{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:15px}.brand{display:flex;gap:12px;align-items:center}.logo{width:54px;height:54px;border-radius:18px;background:linear-gradient(135deg,#ffca55,#ff765e);display:grid;place-items:center;font-size:30px;box-shadow:var(--shadow)}h1{font-size:clamp(24px,3vw,36px);margin:0}.subtitle{font-size:13px;color:var(--muted);margin-top:3px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap}.pill{background:white;border:1px solid #d6e6ef;border-radius:999px;padding:9px 14px;color:var(--ink);font-weight:800}.pill.active{background:var(--blue);color:white}
-.layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(300px,.85fr);gap:15px;align-items:start}.stage,.side,.lower{background:#ffffffed;border:1px solid white;border-radius:23px;box-shadow:var(--shadow);overflow:hidden}
-.stagehead{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;gap:10px;flex-wrap:wrap}.stagehead strong{font-size:18px}.stagehead small{color:var(--muted)}.tag{font-size:11px;background:#fff0ce;color:#865600;padding:5px 9px;border-radius:99px;font-weight:800}
-.scene-wrap{position:relative;background:#c9edff}.scene{width:100%;height:auto;display:block}.hotspot{cursor:pointer}.hotspot:hover .focusable{stroke:#ffbd45;stroke-width:5;filter:drop-shadow(0 0 7px #ffbd45)}.hotspot-label{font-size:17px;font-weight:900;fill:#17364d;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
-.tip{position:absolute;left:14px;bottom:12px;background:#ffffffed;padding:9px 13px;border-radius:13px;font-size:13px;box-shadow:var(--shadow)}
-.actions{display:flex;gap:8px;flex-wrap:wrap;padding:12px 15px;border-top:1px solid #e7eff4}.action{background:#eef7fc;color:#1c5c89;border-radius:11px;padding:9px 12px;font-weight:800}.action.primary{background:var(--blue);color:white}
-.side{padding:15px}.paneltitle{font-size:18px;margin:0 0 10px;display:flex;justify-content:space-between;align-items:center}.word{background:linear-gradient(135deg,#f0f9ff,#fff);border:1px solid #e1eef5;border-radius:17px;padding:14px;margin-bottom:12px;min-height:150px}.cn{font-size:32px;font-weight:900}.py{color:#2475a8;font-weight:800;margin-top:4px}.en{color:var(--muted);font-weight:700}.desc{font-size:13px;line-height:1.55;margin-top:9px;color:#466176}.small{border-radius:10px;padding:8px 11px;background:#e9f3fa;color:#235b80;font-weight:800;font-size:13px;margin:8px 5px 0 0}
-.teacher{background:#fff8e9;border:1px solid #ffe6b2;border-radius:16px;padding:13px;margin-bottom:12px}.quiz{background:#f1f8f3;border:1px solid #d8eddf;border-radius:16px;padding:13px}.teacher h3,.quiz h3{margin:0 0 8px;font-size:15px}.question{font-size:16px;font-weight:850;line-height:1.4}.subq{font-size:12px;color:#8b7854;margin-top:3px}.prompts{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.prompt{background:white;border:1px solid #f0dba9;border-radius:10px;padding:8px 10px;font-size:12px;font-weight:750;color:#72531b}
-.answers{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.answer{padding:10px;border-radius:10px;background:white;border:1px solid #dbe9df;text-align:left;font-weight:750;color:#315d49}.answer.correct{background:#d8f7e5;border-color:#40b77b}.answer.wrong{background:#ffe2dc;border-color:#ff927e}.feedback{font-size:13px;font-weight:800;min-height:20px;margin-top:8px;color:#27764f}.scoreline{display:flex;justify-content:space-between;color:#537065;font-size:12px;font-weight:800;margin-top:8px}.progress{height:8px;background:#e9eff2;border-radius:20px;overflow:hidden;margin-top:8px}.progress div{height:100%;background:linear-gradient(90deg,#35b58a,#ffc24f);width:0;transition:width .3s}
-.bottom{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}.lower{padding:15px}.vocabgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.vocab{background:#f3f8fc;border:1px solid #e3edf3;border-radius:12px;padding:10px;text-align:left;min-height:68px}.vocab b{display:block;font-size:18px}.vocab span{font-size:11px;color:var(--muted)}.sentence{background:#f7f3ff;border:1px solid #e6defb;padding:11px;border-radius:13px;margin-top:8px}.sentence strong{font-size:19px}.sentence small{display:block;color:#76669c;margin-top:3px}.foot{text-align:center;font-size:11px;color:#738797;margin:12px}
-@media(max-width:900px){.layout{grid-template-columns:1fr}.bottom{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr;gap:12px}.side>.paneltitle{grid-column:1/-1}.word,.teacher,.quiz{margin:0}.vocabgrid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.app{padding:10px}.side{display:block}.side>*{margin-bottom:12px}.vocabgrid{grid-template-columns:repeat(2,1fr)}.answers{grid-template-columns:1fr 1fr}.tip{font-size:11px}}
-/* Animated students and ball */
-#playerA .body{transform-box:fill-box;transform-origin:center bottom}#playerA.dribble .body{animation:bob .45s infinite alternate}#playerA.dribble .ball{animation:bounce .45s infinite}#playerA.shoot .body{animation:shoot .8s ease-out}#playerA.run .body{animation:run .22s infinite alternate}#playerA.jump .body{animation:jump .7s ease-in-out}#playerB.catch .body{animation:catch .65s ease-out}
-#movingBall.fly{animation:fly .95s cubic-bezier(.2,.7,.3,1) forwards}
-@keyframes bob{to{transform:translateY(5px) rotate(-2deg)}}@keyframes bounce{0%,100%{transform:translate(0,0)}50%{transform:translate(8px,25px)}}@keyframes shoot{0%,100%{transform:translateY(0)}45%{transform:translateY(-25px)}}@keyframes run{to{transform:translateY(-6px) rotate(3deg)}}@keyframes jump{0%,100%{transform:translateY(0)}45%{transform:translateY(-38px)}}@keyframes catch{0%,100%{transform:translateY(0)}45%{transform:translateY(-9px)}}@keyframes fly{0%{transform:translate(0,0)}55%{transform:translate(170px,-155px)}100%{transform:translate(250px,-45px)}}
-</style></head>
-<body><div class="app">
-<header><div class="brand"><div class="logo">🏀</div><div><h1>运动乐园 · Sports World</h1><div class="subtitle">互动普通话课堂 · Mandarin for Young Learners · 初级 Beginner</div></div></div>
-<nav class="tabs"><button class="pill active" data-zone="basketball">🏀 篮球馆</button><button class="pill" data-zone="badminton">🏸 羽毛球</button><button class="pill" data-zone="swim">🏊 游泳池</button><button class="pill" data-zone="track">🏃 跑道</button></nav></header>
-<div class="layout"><section class="stage"><div class="stagehead"><div><strong id="zoneTitle">🏀 篮球体育馆 Basketball Gym</strong><br><small id="zoneSub">点一点场馆里的物品和人物，开始探索！</small></div><span class="tag">点击互动 · Click to explore</span></div>
-<div class="scene-wrap"><svg class="scene" viewBox="0 0 1000 610" role="img" aria-label="互动篮球体育馆">
-<defs><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#dff5ff"/><stop offset="1" stop-color="#a9d9ee"/></linearGradient><linearGradient id="wood" x2="0" y2="1"><stop stop-color="#f6d08e"/><stop offset="1" stop-color="#c47b3f"/></linearGradient></defs>
-<g id="basketballScene"><rect width="1000" height="610" fill="url(#wall)"/><path d="M0 0H1000V68L500 110 0 68Z" fill="#f7fbff"/><path d="M0 68L500 110 1000 68" fill="none" stroke="#9bc5d8" stroke-width="8"/>
-<g class="hotspot" data-word="灯光"><path class="focusable" d="M110 70h170l-22 22H132ZM420 82h160l-20 20H440ZM720 70h170l-22 22H742Z" fill="#fff9d7" stroke="#e7bd62" stroke-width="3"/><text x="195" y="57" class="hotspot-label" text-anchor="middle">灯光</text></g>
-<g opacity=".9"><rect x="35" y="125" width="185" height="125" rx="8" fill="#9bd8ef" stroke="#fff" stroke-width="10"/><path d="M127 125v125M35 185h185" stroke="#fff" stroke-width="7"/><rect x="780" y="125" width="185" height="125" rx="8" fill="#9bd8ef" stroke="#fff" stroke-width="10"/><path d="M872 125v125M780 185h185" stroke="#fff" stroke-width="7"/></g>
-<g class="hotspot" data-word="记分牌"><rect class="focusable" x="390" y="120" width="220" height="75" rx="12" fill="#17364d" stroke="#fff" stroke-width="5"/><text x="500" y="148" text-anchor="middle" fill="#ffdf69" font-size="15" font-weight="bold">HOME　 GUEST</text><text x="500" y="180" text-anchor="middle" fill="#fff" font-size="27" font-weight="900">12 : 08</text><text x="500" y="110" class="hotspot-label" text-anchor="middle">记分牌</text></g>
-<g class="hotspot" data-word="观众席"><path class="focusable" d="M0 270h240v45H0zM760 270h240v45H760z" fill="#547f9e"/><path d="M0 315h240v30H0zM760 315h240v30H760z" fill="#315e7d"/><g font-size="25"><text x="35" y="298">🙂</text><text x="85" y="298">😄</text><text x="135" y="298">🙌</text><text x="785" y="298">👏</text><text x="835" y="298">🙂</text><text x="885" y="298">😄</text></g><text x="120" y="260" class="hotspot-label" text-anchor="middle">观众席</text></g>
-<path d="M0 345H1000V610H0Z" fill="url(#wood)"/><path d="M0 365H1000M0 590H1000" stroke="#9c592f" stroke-width="5" opacity=".5"/><path d="M80 385H920V580H80Z" fill="none" stroke="#fff0d0" stroke-width="5"/><path d="M500 385V580" stroke="#fff0d0" stroke-width="5"/><circle cx="500" cy="482" r="62" fill="none" stroke="#fff0d0" stroke-width="5"/><path d="M80 420Q250 420 250 482T80 544M920 420Q750 420 750 482T920 544" fill="none" stroke="#fff0d0" stroke-width="5"/>
-<g class="hotspot" data-word="篮筐"><path class="focusable" d="M840 220V370" stroke="#526a79" stroke-width="13"/><rect x="790" y="205" width="110" height="80" rx="6" fill="#f5fbff" stroke="#4d7893" stroke-width="7"/><rect x="823" y="228" width="45" height="27" fill="none" stroke="#e96b4e" stroke-width="5"/><path d="M800 275h90" stroke="#f06c4e" stroke-width="8"/><path d="M805 278l10 42 15 5 15-5 15 5 15-5 10-42" fill="none" stroke="#fff" stroke-width="3"/><text x="850" y="190" class="hotspot-label" text-anchor="middle">篮筐</text></g>
-<g class="hotspot" data-word="篮球"><circle class="focusable" cx="710" cy="525" r="28" fill="#f47b32" stroke="#9a431d" stroke-width="3"/><path d="M682 525h56M710 497v56M691 506q28 19 38 38M729 506q-28 19-38 38" fill="none" stroke="#703b23" stroke-width="3"/><text x="710" y="570" class="hotspot-label" text-anchor="middle">篮球</text></g>
-<g class="hotspot" data-word="水瓶"><rect class="focusable" x="70" y="465" width="34" height="80" rx="9" fill="#55c8df" stroke="#fff" stroke-width="4"/><rect x="78" y="453" width="18" height="15" rx="4" fill="#fff"/><text x="88" y="570" class="hotspot-label" text-anchor="middle">水瓶</text></g>
-<g class="hotspot" data-word="运动鞋"><path class="focusable" d="M155 520q22-10 33-35l17 10q8 22 34 28 18 5 12 22H155q-12-12 0-25Z" fill="#fff" stroke="#4d7893" stroke-width="4"/><path d="M178 517l30 8M185 507l24 9" stroke="#ff765e" stroke-width="4"/><text x="195" y="570" class="hotspot-label" text-anchor="middle">运动鞋</text></g>
-<g id="playerA" class="hotspot" data-word="运球的学生" transform="translate(300 380)"><ellipse cx="0" cy="155" rx="44" ry="9" fill="#6f4a2e" opacity=".25"/><g class="body"><circle cx="0" cy="15" r="24" fill="#f3bd91" stroke="#9a6049" stroke-width="2"/><path d="M-22 8q2-28 26-20 19 7 17 27-10-10-22-10-8 7-21 3Z" fill="#49352e"/><path d="M-29 44Q0 29 29 44L35 105H-35Z" fill="#ff765e" stroke="#b84d45" stroke-width="3"/><text x="0" y="82" text-anchor="middle" fill="white" font-size="17" font-weight="900">12</text><path d="M-25 51L-53 91M25 51L50 92" stroke="#f3bd91" stroke-width="13" stroke-linecap="round"/><path d="M-18 104L-25 151M18 104L28 151" stroke="#244d75" stroke-width="17" stroke-linecap="round"/><path d="M-38 154h27M15 154h29" stroke="#fff" stroke-width="13" stroke-linecap="round"/></g><circle class="ball" cx="55" cy="120" r="17" fill="#f47b32" stroke="#8e421e" stroke-width="2"/><path d="M38 120h34M55 103v34" stroke="#713c22" stroke-width="2"/><text x="0" y="-24" class="hotspot-label" text-anchor="middle">小明</text></g>
-<g id="playerB" class="hotspot" data-word="接球的学生" transform="translate(570 390)"><ellipse cx="0" cy="145" rx="40" ry="8" fill="#6f4a2e" opacity=".22"/><g class="body"><circle cx="0" cy="12" r="22" fill="#d99b70" stroke="#9a6049" stroke-width="2"/><path d="M-22 6q5-25 27-19 15 5 16 21-17-7-25-4Z" fill="#292f42"/><path d="M-28 39Q0 29 28 39L34 99H-34Z" fill="#4b9bcb" stroke="#2b648b" stroke-width="3"/><text x="0" y="77" text-anchor="middle" fill="white" font-size="17" font-weight="900">8</text><path d="M-25 47L-48 75M25 47L48 75" stroke="#d99b70" stroke-width="13" stroke-linecap="round"/><path d="M-17 99L-22 143M17 99L22 143" stroke="#315477" stroke-width="16" stroke-linecap="round"/><path d="M-36 146h26M10 146h28" stroke="#fff" stroke-width="12" stroke-linecap="round"/></g><text x="0" y="-22" class="hotspot-label" text-anchor="middle">小美</text></g>
-<g id="movingBall" transform="translate(330 470)"><circle r="14" fill="#f47b32" stroke="#8e421e" stroke-width="2"/><path d="M-14 0h28M0-14v28" stroke="#713c22" stroke-width="2"/></g>
-</g><g id="otherScene" style="display:none"></g></svg><div class="tip" id="sceneTip">👆 点击篮筐、篮球、记分牌或两位学生！</div></div>
-<div class="actions"><button class="action primary" onclick="animateAction('dribble')">🏀 运球 Dribble</button><button class="action" onclick="animateAction('shoot')">🎯 投篮 Shoot</button><button class="action" onclick="animateAction('pass')">🤝 传球 Pass</button><button class="action" onclick="animateAction('run')">🏃 跑步 Run</button><button class="action" onclick="animateAction('jump')">🙌 跳起来 Jump</button><button class="action" onclick="resetAction()">↺ 重置 Reset</button></div></section>
-<aside class="side"><h2 class="paneltitle">🔎 发现新词 Discover <span class="tag">中 · 拼 · 英</span></h2>
-<div class="word" aria-live="polite"><div class="cn" id="wordCn">篮球体育馆</div><div class="py" id="wordPy">lán qiú tǐ yù guǎn</div><div class="en" id="wordEn">basketball gym</div><div class="desc" id="wordDesc">这是一个打篮球的地方。点击场景里的物品，听一听、说一说。</div><button class="small" onclick="speakWord()">🔊 听发音 Listen</button><button class="small" onclick="nextWord()">➡️ 下一个 Next</button></div>
-<div class="teacher"><h3>🧑‍🏫 老师来提问 Teacher asks</h3><div class="question" id="question">小明在做什么？</div><div class="subq" id="questionEn">What is Xiaoming doing?</div><div class="prompts"><button class="prompt" onclick="nextQuestion()">换一个问题 ↻</button><button class="prompt" onclick="speakQuestion()">🔊 听问题</button></div></div>
-<div class="quiz"><h3>⭐ 小小挑战 Quick Quiz</h3><div id="quizQuestion" class="question">打篮球的时候，我们用什么拍球？</div><div class="answers" id="answers"></div><div class="feedback" id="feedback">选一个答案吧！</div><div class="scoreline"><span>⭐ 得分 Score: <b id="score">0</b></span><span>题目 <b id="qNum">1</b>/5</span></div><div class="progress"><div id="progressBar"></div></div></div></aside></div>
-<div class="bottom"><section class="lower"><h2 class="paneltitle">📚 今日词汇 Word Bank <span class="tag">点击复习</span></h2><div class="vocabgrid" id="vocabGrid"></div></section>
-<section class="lower"><h2 class="paneltitle">💬 开口说 Mandarin Speaking</h2><div class="sentence"><strong>他正在……</strong><small>tā zhèng zài… · He is …ing.</small>他正在运球。 / He is dribbling.</div><div class="sentence"><strong>我会……</strong><small>wǒ huì… · I can …</small>我会投篮。 / I can shoot a basket.</div><div class="sentence"><strong>我喜欢……</strong><small>wǒ xǐ huan… · I like …</small>我喜欢打篮球。 / I like playing basketball.</div><div class="sentence"><strong>球在哪里？</strong><small>qiú zài nǎ lǐ? · Where is the ball?</small>球在篮筐旁边。 / The ball is beside the hoop.</div></section></div>
-<div class="foot">课堂建议：先看场景 → 点击学词 → 模仿动作 → 用完整句回答 → 完成小测。可让孩子轮流当“小老师”。</div></div>
+:root{
+ --ink:#18344d;--muted:#668096;--blue:#176daf;--blue2:#eaf5fc;
+ --gold:#ffc45d;--coral:#f27a5e;--green:#2a9e77;--purple:#7966bb;
+ --paper:#fff;--line:#dceaf2;--shadow:0 12px 34px #183b5418;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(145deg,#e7f6ff 0%,#fff8eb 54%,#eaf7ef 100%);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid #ffbf45;outline-offset:3px}
+.app{max-width:1500px;margin:auto;padding:clamp(10px,2vw,22px)}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.lesson-launch{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:14px 17px;margin-bottom:14px}
+.launch-copy{display:flex;flex-direction:column;gap:4px}
+.launch-copy strong{font-size:17px}
+.launch-copy span{font-size:13px;color:var(--muted)}
+.launch-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.level-label{font-size:12px;color:var(--muted);font-weight:850}
+.launch-controls select{border:1px solid #d6e6ee;border-radius:12px;padding:10px;background:#f6fbfe;color:var(--ink);font:inherit;font-size:13px;font-weight:800}
+.lesson-guide{padding:17px;margin-bottom:14px;border:2px solid #cfe5f3}
+.lesson-guide[hidden]{display:none}
+.lesson-guide-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.lesson-guide-head h2{font-size:22px;margin:9px 0 3px}
+.lesson-guide-head p{margin:0;color:var(--muted);font-size:14px}
+.close-lesson{border:0;border-radius:12px;background:#eef5f8;color:#45657a;width:38px;height:38px;font-size:18px;font-weight:900}
+.lesson-progress{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:15px 0}
+.lesson-progress span{height:7px;border-radius:99px;background:#e7eff4}
+.lesson-progress span.done{background:linear-gradient(90deg,#2a9e77,#8acfae)}
+.lesson-content{background:#f5faff;border:1px solid #deedf6;border-radius:17px;padding:15px;min-height:105px}
+.lesson-instruction{font-size:17px;font-weight:900;line-height:1.6}
+.lesson-translation{font-size:13px;color:var(--muted);margin-top:3px}
+.lesson-choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.lesson-chip{border:1px solid #d5e7f2;background:white;border-radius:12px;padding:9px 12px;color:#245d84;font-weight:850}
+.lesson-example{margin-top:12px;padding:11px;border-radius:12px;background:#fff7e7;color:#73551f;line-height:1.6;font-size:14px}
+.lesson-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px}
+.lesson-nav span{font-size:12px;color:var(--muted);font-weight:900}
+.lesson-nav button:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:600px){.lesson-launch{align-items:stretch}.launch-controls{display:grid;grid-template-columns:1fr 1fr}.launch-controls .level-label{grid-column:1/-1}.launch-controls select,.launch-controls button{width:100%}.lesson-guide{padding:13px}.lesson-guide-head h2{font-size:19px}.lesson-nav .action{font-size:12px;padding:9px}}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:54px;height:54px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,#ffcf65,#f27c61);font-size:30px;box-shadow:var(--shadow)}
+h1{font-size:clamp(23px,3vw,36px);line-height:1.12;margin:0;letter-spacing:.01em}
+.subtitle{font-size:13px;color:var(--muted);margin-top:4px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{border:1px solid #d3e5ee;border-radius:999px;padding:10px 15px;background:#fff;color:var(--ink);font-weight:850;box-shadow:0 3px 10px #183b540b}
+.tab.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.layout{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(310px,.86fr);gap:16px;align-items:start}
+.card{background:#ffffffed;border:1px solid #fff;border-radius:25px;box-shadow:var(--shadow);overflow:hidden}
+.stage-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:15px 18px}
+.stage-head strong{font-size:clamp(17px,2vw,21px)}
+.stage-head small{color:var(--muted);display:inline-block;margin-top:3px}
+.tag{display:inline-flex;align-items:center;border-radius:999px;background:#fff1d1;color:#855300;padding:7px 11px;font-size:12px;font-weight:900}
+.scene-wrap{position:relative;background:#d8f1fb;overflow:hidden}
+svg.scene{width:100%;height:auto;display:block;min-height:310px}
+.hotspot{cursor:pointer}
+.hotspot .focusable{transition:filter .15s,stroke .15s}
+.hotspot:hover .focusable,.hotspot:focus .focusable{stroke:#ffbd45!important;stroke-width:5!important;filter:drop-shadow(0 0 7px #ffbd45)}
+.hotspot-label{font-family:inherit;font-size:17px;font-weight:900;fill:#17364d;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round;pointer-events:none}
+.scene-callout{position:absolute;left:15px;bottom:14px;max-width:calc(100% - 30px);padding:10px 14px;border-radius:16px;background:#ffffffed;box-shadow:0 5px 18px #17364d18;font-weight:750;font-size:14px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;padding:13px 15px;border-top:1px solid #e6eff4}
+.action{border:0;border-radius:13px;padding:10px 13px;background:#edf6fb;color:#205d86;font-weight:850}
+.action.primary{background:var(--blue);color:white}
+.action:active,.tab:active{transform:scale(.98)}
+.side{padding:16px;display:flex;flex-direction:column;gap:13px}
+.panel-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0;font-size:19px}
+.word-card{padding:16px;border:1px solid #dfedf5;border-radius:19px;background:linear-gradient(135deg,#eff9ff,#fff);min-height:190px}
+.word-cn{font-size:clamp(29px,3vw,37px);font-weight:950;line-height:1.2;overflow-wrap:anywhere}
+.word-py{font-size:18px;color:#2479ae;font-weight:850;margin-top:7px}
+.word-en{font-size:16px;color:#647c91;font-weight:800;margin-top:1px}
+.word-desc{font-size:14px;line-height:1.65;color:#46647a;margin-top:12px}
+.small-btn{border:0;border-radius:11px;background:#e8f3fa;color:#245d84;font-weight:850;padding:9px 12px;margin:10px 6px 0 0}
+.teacher{border-radius:18px;background:#fff8e9;border:1px solid #ffe7b7;padding:14px}
+.teacher h3,.quiz h3{font-size:16px;margin:0 0 8px}
+.question{font-weight:900;font-size:18px;line-height:1.5}
+.question-en{font-size:13px;color:#8b7857;margin-top:3px}
+.question-tools{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.prompt-btn{border:1px solid #f0dfbb;border-radius:11px;background:#fff;padding:8px 11px;color:#73551f;font-size:13px;font-weight:850}
+.quiz{border-radius:18px;background:#f0f8f3;border:1px solid #d9ecdf;padding:14px}
+.quiz .question{font-size:16px}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+.answer{background:white;border:1px solid #dcebe1;border-radius:12px;padding:11px 10px;text-align:left;font-weight:800;color:#315f49;min-height:44px}
+.answer.correct{background:#d8f6e4;border-color:#53bb82}
+.answer.wrong{background:#ffe3dd;border-color:#f39a86}
+.feedback{min-height:23px;margin-top:8px;color:#28734f;font-size:13px;font-weight:850}
+.scoreline{display:flex;justify-content:space-between;gap:8px;color:#537166;font-size:12px;font-weight:850;margin-top:6px}
+.progress{height:8px;background:#e4eee8;border-radius:99px;overflow:hidden;margin-top:8px}
+.progress>div{height:100%;width:0;background:linear-gradient(90deg,#36ad81,#ffc45d);transition:width .25s}
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.practice-step{display:grid;grid-template-columns:34px 1fr;gap:9px;align-items:start;padding:10px 0;border-bottom:1px solid #e7eff3}
+.practice-step:last-child{border-bottom:0}
+.step-no{width:30px;height:30px;border-radius:10px;background:#eaf4fb;color:#176daf;display:grid;place-items:center;font-weight:950}
+.practice-step b{display:block;font-size:14px}
+.practice-step small{display:block;color:#718698;font-size:12px;line-height:1.5;margin-top:3px}
+.safety-note{background:#fff8e9;border:1px solid #ffe7b7;border-radius:14px;padding:12px;line-height:1.65;font-size:14px}
+.safety-note strong{display:block;margin-bottom:5px}
+
+.lower{padding:16px}
+.vocab-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.vocab{border:1px solid #e1edf3;border-radius:13px;background:#f3f8fc;text-align:left;padding:10px;min-height:76px;color:var(--ink)}
+.vocab b{display:block;font-size:18px;font-weight:900}
+.vocab span{display:block;font-size:11px;color:#698196;line-height:1.35;margin-top:4px}
+.sentence{border:1px solid #e7defa;background:#f8f5ff;border-radius:14px;padding:12px;margin-top:9px;line-height:1.6}
+.sentence strong{font-size:18px}
+.sentence small{display:block;color:#796aa0;font-size:12px;margin-top:2px}
+.lesson-note{font-size:12px;line-height:1.6;color:#718698;text-align:center;margin:14px 5px 3px}
+.hidden{display:none!important}
+
+/* Scene motion: one class is added to the active SVG when an action is selected. */
+.character{transform-box:fill-box;transform-origin:center bottom}
+.scene.action-dribble #basketPlayer .character{animation:bodyBob .45s ease-in-out infinite alternate}
+.scene.action-dribble #basketPlayer .dribbleBall{animation:ballBounce .45s ease-in-out infinite}
+.scene.action-shoot #basketPlayer .character{animation:jumpBody .8s ease-out}
+.scene.action-jump #basketPlayer .character{animation:jumpBody .65s ease-out}
+.scene.action-shoot #shootBall{animation:shootArc .85s ease-in forwards}
+.scene.action-pass #passBall{animation:passArc .8s ease-in-out forwards}
+.scene.action-pass #receiver{animation:receive .75s ease-out}
+.scene.action-run .runner .character{animation:runBob .24s ease-in-out infinite alternate}
+.scene.action-run .runner .legs{animation:legs .24s ease-in-out infinite alternate}
+.scene.action-serve #badmintonA .character{animation:serve .6s ease-out}
+.scene.action-footwork #badmintonA .character{animation:badmintonFootwork .8s ease-in-out}
+@keyframes badmintonFootwork{0%{transform:translate(0,0)}30%{transform:translate(34px,-5px)}65%{transform:translate(66px,0)}100%{transform:translate(0,0)}}
+.scene.action-serve #shuttle{animation:shuttleFly .8s ease-in forwards}
+.scene.action-rally #shuttle{animation:rallyFly .9s ease-in-out infinite alternate}
+.scene.action-swim #swimmer1 .character,.scene.action-swim #swimmer2 .character{animation:swimBob .65s ease-in-out infinite alternate}
+.scene.action-kick #swimmer1 .legs{animation:kick .23s ease-in-out infinite alternate}
+.scene.action-float #swimmer2 .character{animation:floatMove 1.4s ease-in-out infinite alternate}
+.scene.action-hurdle #hurdler .character{animation:hurdleJump .7s ease-out}
+.scene.action-longjump #longJumper .character{animation:longJump .9s ease-out}
+.scene.action-highjump #highJumper .character{animation:highJump .9s ease-out}
+.scene.action-trackrun .runner .character{animation:runBob .24s ease-in-out infinite alternate}
+@keyframes bodyBob{to{transform:translateY(5px) rotate(-2deg)}}
+@keyframes ballBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(23px)}}
+@keyframes jumpBody{0%,100%{transform:translateY(0)}42%{transform:translateY(-34px)}}
+@keyframes shootArc{0%{transform:translate(0,0)}65%{transform:translate(160px,-130px)}100%{transform:translate(235px,-80px)}}
+@keyframes passArc{0%{transform:translate(0,0)}100%{transform:translate(255px,-20px)}}
+@keyframes receive{0%,100%{transform:translateY(0)}45%{transform:translateY(-10px)}}
+@keyframes runBob{to{transform:translateY(-5px) rotate(3deg)}}
+@keyframes legs{to{transform:rotate(18deg)}}
+@keyframes serve{0%,100%{transform:rotate(0)}45%{transform:translateY(-8px) rotate(-18deg)}}
+@keyframes shuttleFly{to{transform:translate(230px,-85px) rotate(170deg)}}
+@keyframes rallyFly{to{transform:translate(-210px,70px) rotate(180deg)}}
+@keyframes swimBob{to{transform:translateY(7px) rotate(-2deg)}}
+@keyframes kick{to{transform:rotate(20deg)}}
+@keyframes floatMove{to{transform:translateY(-7px) rotate(2deg)}}
+@keyframes hurdleJump{0%,100%{transform:translateY(0)}45%{transform:translateY(-55px) translateX(12px)}}
+@keyframes longJump{0%,100%{transform:translateY(0)}50%{transform:translate(85px,-42px) rotate(-5deg)}}
+@keyframes highJump{0%,100%{transform:translateY(0)}50%{transform:translate(35px,-67px) rotate(-8deg)}}
+@media(max-width:930px){.layout{grid-template-columns:1fr}.bottom{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr;align-items:start}.side>.panel-title{grid-column:1/-1}.word-card,.teacher,.quiz{height:100%}}
+@media(max-width:600px){.app{padding:9px}.brand{width:100%}.tabs{width:100%;display:grid;grid-template-columns:repeat(2,1fr)}.tab{padding:11px 8px}.layout{gap:11px}.side{display:flex;padding:12px}.stage-head{padding:12px}.tag{font-size:11px}.scene-callout{font-size:12px;padding:8px 11px}.actions{padding:10px}.action{font-size:13px;padding:10px}.vocab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bottom{gap:11px}.lower{padding:13px}.answers{grid-template-columns:1fr 1fr}.word-card{min-height:auto}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand"><div class="logo" id="brandIcon">🏀</div><div><h1>运动乐园 · Sports World</h1><div class="subtitle">互动普通话课堂 · Mandarin for Young Learners · 初级 Beginner</div></div></div>
+  <nav class="tabs" aria-label="运动场景">
+    <button class="tab active" data-zone="basketball">🏀 篮球馆</button>
+    <button class="tab" data-zone="badminton">🏸 羽毛球馆</button>
+    <button class="tab" data-zone="swim">🏊 游泳馆</button>
+    <button class="tab" data-zone="track">🏃 田径场</button>
+  </nav>
+</header>
+
+<section class="card lesson-launch" aria-label="课堂导航">
+  <div class="launch-copy">
+    <strong>🎓 一起上课！Guided Lesson</strong>
+    <span>老师带领孩子按顺序完成：观察 → 学词 → 听说 → 动作 → 闯关</span>
+  </div>
+  <div class="launch-controls">
+    <label class="level-label" for="learnerLevel">学习方式</label>
+    <select id="learnerLevel" aria-label="选择学习难度">
+      <option value="starter">🌱 初级跟读</option>
+      <option value="challenge">🚀 进阶表达</option>
+    </select>
+    <button type="button" class="action primary" id="startLessonBtn">▶ 开始上课</button>
+  </div>
+</section>
+<section class="card lesson-guide" id="lessonGuide" hidden aria-live="polite">
+  <div class="lesson-guide-head">
+    <div>
+      <span class="tag">课堂任务 · Lesson mission</span>
+      <h2 id="lessonStepTitle">第一步：观察场景</h2>
+      <p id="lessonStepHint">先看看场馆里有什么。</p>
+    </div>
+    <button type="button" class="close-lesson" id="closeLessonBtn" aria-label="关闭课堂导航">✕</button>
+  </div>
+  <div class="lesson-progress" id="lessonProgress"></div>
+  <div class="lesson-content" id="lessonContent"></div>
+  <div class="lesson-nav">
+    <button type="button" class="action" id="lessonPrevBtn">← 上一步</button>
+    <span id="lessonStepCount">1 / 5</span>
+    <button type="button" class="action primary" id="lessonNextBtn">下一步 →</button>
+  </div>
+</section>
+
+<div class="layout">
+<section class="card">
+  <div class="stage-head"><div><strong id="zoneTitle">🏀 篮球体育馆 Basketball Gym</strong><br><small id="zoneSub">看看球场、球员和比赛用品，点击场景学习新词。</small></div><span class="tag">点击互动 · Click to explore</span></div>
+  <div class="scene-wrap">
+    <svg id="scene" class="scene" viewBox="0 0 1000 620" role="img" aria-label="互动运动场景"></svg>
+    <div class="scene-callout" id="sceneTip">👆 点击场景里的物品或运动员，探索新词！</div>
+  </div>
+  <div class="actions" id="actionBar"></div>
+</section>
+
+<aside class="card side">
+  <h2 class="panel-title">🔎 发现新词 Discover <span class="tag">中 · 拼 · 英</span></h2>
+  <div class="word-card" aria-live="polite">
+    <div class="word-cn" id="wordCn">篮球体育馆</div><div class="word-py" id="wordPy">lán qiú tǐ yù guǎn</div><div class="word-en" id="wordEn">basketball gym</div>
+    <div class="word-desc" id="wordDesc">这是一个打篮球的地方。看看场馆里的设备和运动员吧！</div>
+    <button class="small-btn" id="speakWordBtn">🔊 听发音 Listen</button><button class="small-btn" id="nextWordBtn">➡️ 下一个 Next</button>
+  </div>
+  <section class="teacher">
+    <h3>🧑‍🏫 老师来提问 Teacher asks</h3>
+    <div class="question" id="teacherQuestion">小明在做什么？</div><div class="question-en" id="teacherQuestionEn">What is Xiaoming doing?</div>
+    <div class="question-tools"><button class="prompt-btn" id="nextQuestionBtn">换一个问题 ↻</button><button class="prompt-btn" id="speakQuestionBtn">🔊 听问题</button></div>
+  </section>
+  <section class="quiz">
+    <h3>⭐ 场景小挑战 Scene Quiz</h3>
+    <div class="question" id="quizQuestion">篮球比赛中，应该把球投向哪里？</div>
+    <div class="answers" id="answers"></div>
+    <div class="feedback" id="feedback">选择一个答案吧！</div>
+    <div class="scoreline"><span>⭐ 得分 Score: <b id="score">0</b></span><span>题目 <b id="qNum">1</b>/<b id="qTotal">5</b></span></div>
+    <div class="progress"><div id="progressBar"></div></div>
+  </section>
+</aside>
+</div>
+
+<div class="bottom">
+  <section class="card lower" id="practicePanel">
+    <h2 class="panel-title">🎯 动作分解 Move & Learn <span class="tag">看 · 听 · 做 · 说</span></h2>
+    <div id="practiceContent"></div>
+  </section>
+  <section class="card lower" id="safetyPanel">
+    <h2 class="panel-title">🛡️ 运动小贴士 Safety First</h2>
+    <div id="safetyContent"></div>
+  </section>
+  <section class="card lower">
+    <h2 class="panel-title">📚 今日词汇 Word Bank <span class="tag">点击复习</span></h2>
+    <div class="vocab-grid" id="vocabGrid"></div>
+  </section>
+  <section class="card lower">
+    <h2 class="panel-title">💬 开口说 Mandarin Speaking</h2>
+    <div id="sentenceBank"></div>
+  </section>
+</div>
+<div class="lesson-note">课堂建议：点击“开始上课”，按五个步骤完成观察、学词、听说、动作和闯关。老师可选择初级跟读或进阶表达；切换运动场景时，课堂流程会自动回到第一步。</div>
+</div>
+
 <script>
-const words={
-"篮球体育馆":["篮球体育馆","lán qiú tǐ yù guǎn","basketball gym","这是一个打篮球的地方。你看见了什么？"],
-"灯光":["灯光","dēng guāng","lights","体育馆的灯很亮，照亮整个球场。"],
-"记分牌":["记分牌","jì fēn pái","scoreboard","记分牌告诉我们比赛的分数。现在是十二比八。"],
-"观众席":["观众席","guān zhòng xí","stands / audience seats","观众坐在这里看比赛，也会为运动员加油。"],
-"木地板":["木地板","mù dì bǎn","wooden floor","篮球馆的地板平整，运动员可以在上面跑动。"],
-"篮筐":["篮筐","lán kuāng","basketball hoop","把篮球投进篮筐，就能得分！篮筐上面有篮板。"],
-"篮球":["篮球","lán qiú","basketball","篮球是圆圆的、橙色的。我们可以拍球、传球和投篮。"],
-"水瓶":["水瓶","shuǐ píng","water bottle","运动以后要适当喝水，补充水分。"],
-"运动鞋":["运动鞋","yùn dòng xié","sports shoes","运动时穿合适的运动鞋，活动起来更方便。"],
-"运球的学生":["运球","yùn qiú","dribbling","运球就是用手连续拍篮球，让球弹起来。"],
-"接球的学生":["接球","jiē qiú","catching the ball","接球时看着球，伸出双手，稳稳地把球接住。"],
-"羽毛球":["羽毛球","yǔ máo qiú","badminton shuttlecock","羽毛球轻轻的，前面有羽毛，后面是圆圆的软木头。"],
-"球拍":["球拍","qiú pāi","racket","我们用球拍打羽毛球。"],
-"游泳池":["游泳池","yóu yǒng chí","swimming pool","游泳池里有水。下水前要听从老师或救生员的安排。"],
-"泳镜":["泳镜","yǒng jìng","swimming goggles","泳镜可以保护眼睛，帮助我们在水里看清楚。"],
-"跑道":["跑道","pǎo dào","running track","跑道是跑步的地方。我们可以沿着跑道慢慢跑。"]
+"use strict";
+
+const scenes = {
+basketball: {
+  icon:"🏀", title:"篮球体育馆 Basketball Gym", titleEn:"basketball gym", sub:"看看球场、球员和比赛用品，点击场景学习新词。",
+  tip:"👆 点击篮筐、篮球、记分牌或运动员！",
+  words:[
+    ["篮球体育馆","lán qiú tǐ yù guǎn","basketball gym","这是打篮球的室内场馆。球员在这里练习和比赛。"],
+    ["篮球","lán qiú","basketball","篮球是圆圆的，通常是橙色的。我们可以拍球、传球和投篮。"],
+    ["篮筐","lán kuāng","basketball hoop","把篮球投进篮筐，就有机会得分。篮筐下面有篮网。"],
+    ["篮板","lán bǎn","backboard","篮筐后面的板叫篮板，投篮时篮球有时会先碰到篮板再进入篮筐。"],
+    ["运球","yùn qiú","dribble","运球就是用手连续拍球，让篮球弹起来。"],
+    ["投篮","tóu lán","shoot the ball","瞄准篮筐，屈膝并伸展手臂，把球投向篮筐。"],
+    ["传球","chuán qiú","pass the ball","把球传给队友，大家一起合作。"],
+    ["记分牌","jì fēn pái","scoreboard","记分牌显示两队的比赛分数和时间。"],
+    ["观众席","guān zhòng xí","stands","观众坐在这里看比赛，为运动员加油。"],
+    ["运动鞋","yùn dòng xié","sports shoes","运动鞋帮助我们安全、舒服地运动。"],
+    ["水瓶","shuǐ píng","water bottle","运动后可以适当喝水，补充水分。"],
+    ["木地板","mù dì bǎn","wooden floor","篮球馆的地板平整，地上画着球场线。"]
+  ],
+  questions:[
+    ["小明在做什么？","What is Xiaoming doing?"],
+    ["篮球是什么形状？","What shape is a basketball?"],
+    ["我们把球投向哪里？","Where do we shoot the ball?"],
+    ["比赛分数在哪里看？","Where can we see the score?"],
+    ["小美可以把球传给谁？","Who can Xiaomei pass the ball to?"]
+  ],
+  quiz:[
+    {q:"篮球比赛中，应该把球投向哪里？",a:["篮筐","观众席","水瓶","屋顶"],c:0,why:"答对了！把球投向篮筐。"},
+    {q:"运球时，我们主要用什么拍球？",a:["脚","手","头","肩膀"],c:1,why:"正确！用手连续拍球就是运球。"},
+    {q:"比赛分数在哪里看？",a:["球鞋","记分牌","窗户","水瓶"],c:1,why:"很好！记分牌显示比赛分数。"},
+    {q:"“传球”是什么意思？",a:["把球传给队友","把球放进书包","喝水","坐下来"],c:0,why:"太棒了！传球需要队友合作。"},
+    {q:"打篮球时，脚上适合穿什么？",a:["拖鞋","雨靴","运动鞋","棉拖鞋"],c:2,why:"对！运动时穿合适的运动鞋。"}
+  ],
+  actions:[["dribble","🏀 运球 Dribble"],["shoot","🎯 投篮 Shoot"],["pass","🤝 传球 Pass"],["run","🏃 跑动 Run"],["jump","🙌 跳起来 Jump"]],
+  sentences:[
+    ["他正在……","tā zhèng zài… · He is …ing.","他正在运球。 / He is dribbling."],
+    ["我会……","wǒ huì… · I can …","我会投篮。 / I can shoot a basket."],
+    ["我喜欢……","wǒ xǐ huan… · I like …","我喜欢打篮球。 / I like playing basketball."],
+    ["球在哪里？","qiú zài nǎ lǐ? · Where is the ball?","球在篮筐旁边。 / The ball is beside the hoop."]
+  ],
+  svg: basketSVG
+},
+badminton: {
+  icon:"🏸", title:"羽毛球馆 Badminton Court", titleEn:"badminton court", sub:"认识球拍、羽毛球、球网和运动员，看看他们怎样对打。",
+  tip:"👆 点击球拍、羽毛球、球网或运动员！",
+  words:[
+    ["羽毛球馆","yǔ máo qiú guǎn","badminton hall","这是打羽毛球的室内场馆，地上有球场边线。"],
+    ["羽毛球","yǔ máo qiú","shuttlecock","羽毛球有白色的羽毛和圆圆的球托，飞起来很轻。"],
+    ["球拍","qiú pāi","racket","我们用球拍击打羽毛球。球拍有拍框、拍线和拍柄。"],
+    ["球网","qiú wǎng","net","球网在球场中间，羽毛球要越过球网。"],
+    ["发球","fā qiú","serve","比赛开始时，运动员把羽毛球发到对方场地。"],
+    ["击球","jī qiú","hit the shuttlecock","运动员挥动球拍，把羽毛球打向前方。"],
+    ["接球","jiē qiú","return the shuttle","看到对方打来的羽毛球，要移动脚步并挥拍把球回击过去。"],
+    ["球场边线","qiú chǎng biān xiàn","court boundary line","场地上的边线标出球场范围，帮助裁判判断球是否出界。"],
+    ["运动鞋","yùn dòng xié","sports shoes","羽毛球运动需要灵活移动，穿合适的运动鞋很重要。"],
+    ["运动员","yùn dòng yuán","athlete / player","运动员在球场上练习、比赛和合作。"],
+    ["记分牌","jì fēn pái","scoreboard","记分牌显示比赛双方的分数。"],
+    ["长椅","cháng yǐ","bench","运动员休息时可以坐在长椅上。"]
+  ],
+  questions:[
+    ["运动员手里拿着什么？","What is the player holding?"],
+    ["羽毛球要飞过什么？","What does the shuttlecock fly over?"],
+    ["比赛开始时，运动员先做什么？","What does a player do to start a rally?"],
+    ["羽毛球通常是什么颜色？","What colour is a shuttlecock usually?"],
+    ["球打到边线外面，算不算出界？","Is it out if it lands outside the line?"]
+  ],
+  quiz:[
+    {q:"打羽毛球时，我们用什么击球？",a:["球拍","水瓶","篮筐","脚踏车"],c:0,why:"正确！我们用球拍击打羽毛球。"},
+    {q:"球网应该在哪里？",a:["球场中间","天花板上","观众席后面","门外"],c:0,why:"答对了！球网把球场分成两边。"},
+    {q:"羽毛球主要由哪些部分组成？",a:["羽毛和球托","轮子和把手","鞋带和鞋底","球网和球拍"],c:0,why:"很好！羽毛球由羽毛和球托组成。"},
+    {q:"比赛开始时，运动员要先做什么？",a:["发球","游泳","跳远","喝汤"],c:0,why:"太棒了！比赛开始先发球。"},
+    {q:"羽毛球落在边线外面，通常是……",a:["得分牌","出界","游泳","进篮"],c:1,why:"正确！球落在界线外就是出界。"}
+  ],
+  actions:[["serve","🏸 发球 Serve"],["rally","↔️ 来回击球 Rally"],["hit","🎾 挥拍击球 Hit"],["run","🏃 移动步伐 Footwork"],["reset","↺ 重置 Reset"]],
+  sentences:[
+    ["他正在……","tā zhèng zài… · He is …ing.","他正在打羽毛球。 / He is playing badminton."],
+    ["我用……打羽毛球","wǒ yòng… dǎ yǔ máo qiú · I use … to play badminton.","我用球拍打羽毛球。 / I use a racket to play badminton."],
+    ["球飞过……","qiú fēi guò… · The shuttle flies over …","羽毛球飞过球网。 / The shuttle flies over the net."],
+    ["轮到你了！","lún dào nǐ le · It’s your turn!","轮到你发球了！ / It’s your turn to serve."]
+  ],
+  svg: badmintonSVG
+},
+swim: {
+  icon:"🏊", title:"游泳馆 Swimming Pool", titleEn:"swimming pool", sub:"看看泳池里的泳道、游泳的人和安全设备，学习游泳词汇。",
+  tip:"👆 点击泳道、泳镜、泳帽、救生员或游泳的人！",
+  words:[
+    ["游泳馆","yóu yǒng guǎn","indoor swimming pool","这里有室内游泳池，人们可以在这里学习和练习游泳。"],
+    ["游泳池","yóu yǒng chí","swimming pool","游泳池里装满了水，池边有防滑地面。"],
+    ["泳道","yǒng dào","swimming lane","泳道是泳池里供游泳者使用的通道，泳道线用来分隔相邻的泳道。"],
+    ["泳镜","yǒng jìng","swimming goggles","泳镜戴在眼睛上，帮助我们在水里看清楚。"],
+    ["泳帽","yǒng mào","swim cap","泳帽戴在头上，可以把头发收起来。"],
+    ["救生员","jiù shēng yuán","lifeguard","救生员在泳池边观察情况，帮助大家注意安全。"],
+    ["游泳","yóu yǒng","swim / swimming","游泳是在水里移动身体的一种运动。"],
+    ["自由泳","zì yóu yǒng","freestyle","自由泳时身体向前，手臂轮流划水，双腿上下打水。"],
+    ["蛙泳","wā yǒng","breaststroke","蛙泳时双臂向外、向内划水，双腿向外蹬水后并拢。"],
+    ["打水","dǎ shuǐ","kick","游泳时用双腿有节奏地踢水，帮助身体保持平衡并向前移动。"],
+    ["浮板","fú bǎn","kickboard / float board","浮板可以辅助练习打腿，要在老师指导下使用。"],
+    ["泳池梯","yǒng chí tī","pool ladder","泳池梯帮助游泳者安全地进出泳池。"]
+  ],
+  questions:[
+    ["小朋友在哪里游泳？","Where is the child swimming?"],
+    ["游泳时，眼睛上可以戴什么？","What can we wear over our eyes when swimming?"],
+    ["谁在泳池边帮助大家注意安全？","Who helps keep people safe at the pool?"],
+    ["自由泳时，手臂怎样运动？","How do the arms move in freestyle?"],
+    ["泳道线有什么作用？","What is the purpose of lane ropes?"]
+  ],
+  quiz:[
+    {q:"游泳时，戴在眼睛上帮助看清楚的是什么？",a:["泳镜","球拍","头盔","手套"],c:0,why:"答对了！泳镜帮助我们在水里看清楚。"},
+    {q:"谁在泳池边观察并帮助大家注意安全？",a:["裁判","救生员","售票员","厨师"],c:1,why:"正确！救生员负责关注泳池安全。"},
+    {q:"自由泳时，身体在哪里？",a:["水里","树上","篮筐里","沙坑里"],c:0,why:"很好！自由泳是在水中进行的。"},
+    {q:"泳道线可以做什么？",a:["分开泳道","变成球拍","照亮房间","计分"],c:0,why:"太棒了！泳道线帮助分隔不同泳道。"},
+    {q:"下水前应该怎么做？",a:["先热身并听从指导","直接跳进去","在池边奔跑","推别人下水"],c:0,why:"正确！下水前要热身并听从老师或救生员安排。"}
+  ],
+  actions:[["swim","🏊 自由泳 Freestyle"],["kick","🦶 打水 Kick"],["float","🛟 仰漂 Back float"],["reset","↺ 重置 Reset"]],
+  sentences:[
+    ["他正在……","tā zhèng zài… · He is …ing.","他正在游泳。 / He is swimming."],
+    ["我戴着……","wǒ dài zhe… · I am wearing …","我戴着泳镜和泳帽。 / I am wearing swimming goggles and a swim cap."],
+    ["水是……","shuǐ shì… · The water is …","水是蓝色的。 / The water is blue."],
+    ["请注意安全。","qǐng zhù yì ān quán · Please be safe.","请听从老师和救生员的安排。 / Please follow the teacher and lifeguard."]
+  ],
+  svg: swimSVG
+},
+track: {
+  icon:"🏃", title:"田径场 Athletics Track", titleEn:"athletics track", sub:"田径场上有跑步、跨栏、跳远和跳高，点击运动员和器材学一学。",
+  tip:"👆 点击跑道、栏架、沙坑、跳高横杆或运动员！",
+  words:[
+    ["田径场","tián jìng chǎng","track and field venue","田径场是进行跑步、跨栏、跳远和跳高等田径项目的场地。"],
+    ["跑道","pǎo dào","running track","跑道上有多条分开的跑步道，运动员可以沿着跑道比赛。"],
+    ["起跑线","qǐ pǎo xiàn","starting line","跑步比赛开始前，运动员站在起跑线后面。"],
+    ["终点线","zhōng diǎn xiàn","finish line","运动员跑到终点线，比赛的这一段就结束了。"],
+    ["跨栏","kuà lán","hurdles","跨栏运动员要跑起来，再抬腿越过一个个栏架。"],
+    ["栏架","lán jià","hurdle","栏架是跨栏比赛中运动员需要越过的器材。"],
+    ["跳远","tiào yuǎn","long jump","跳远时，运动员助跑、起跳，尽量跳得远一些。"],
+    ["沙坑","shā kēng","sand pit","跳远运动员落地时会落在沙坑里。"],
+    ["跳高","tiào gāo","high jump","跳高运动员要越过横杆，落在柔软的垫子上。"],
+    ["横杆","héng gān","crossbar","跳高时，运动员要越过横杆，不能把它碰掉。"],
+    ["接力赛","jiē lì sài","relay race","接力赛中，队员要把接力棒交给下一位队友。"],
+    ["秒表","miǎo biǎo","stopwatch","秒表可以记录运动员跑步用了多少时间。"]
+  ],
+  questions:[
+    ["这位运动员正在进行什么项目？","Which event is this athlete taking part in?"],
+    ["跨栏时要越过什么？","What does a hurdler jump over?"],
+    ["跳远以后，运动员落在哪里？","Where does the long jumper land?"],
+    ["跳高运动员要越过什么？","What does a high jumper go over?"],
+    ["接力赛要把什么交给队友？","What do runners pass to a teammate in a relay?"]
+  ],
+  quiz:[
+    {q:"跨栏运动员要越过什么？",a:["栏架","球网","篮筐","泳道线"],c:0,why:"正确！跨栏需要越过一个个栏架。"},
+    {q:"跳远运动员通常落在哪里？",a:["沙坑","游泳池","观众席","篮筐"],c:0,why:"答对了！跳远落在沙坑里。"},
+    {q:"跳高时要越过什么？",a:["横杆","球网","终点旗","篮球"],c:0,why:"很好！跳高要越过横杆。"},
+    {q:"跑步比赛从哪里开始？",a:["起跑线","沙坑","看台","水池"],c:0,why:"正确！运动员从起跑线开始比赛。"},
+    {q:"接力赛中，队友之间要传递什么？",a:["接力棒","泳镜","球拍","水瓶"],c:0,why:"太棒了！接力赛需要传递接力棒。"}
+  ],
+  actions:[["trackrun","🏃 跑步 Run"],["hurdle","🚧 跨栏 Hurdles"],["longjump","🦘 跳远 Long jump"],["highjump","🤸 跳高 High jump"],["reset","↺ 重置 Reset"]],
+  sentences:[
+    ["他正在……","tā zhèng zài… · He is …ing.","他正在跑步。 / He is running."],
+    ["运动员会……","yùn dòng yuán huì… · The athlete can …","这位运动员会跳远。 / This athlete can do the long jump."],
+    ["运动员越过……","yùn dòng yuán yuè guò… · The athlete clears …","运动员越过栏架。 / The athlete clears the hurdle."],
+    ["谁跑得快？","shéi pǎo de kuài? · Who runs fast?","红色衣服的运动员跑得快。 / The athlete in red runs fast."]
+  ],
+  svg: trackSVG
+}
 };
-const vocab=["篮球","篮筐","记分牌","观众席","木地板","灯光","水瓶","运动鞋","运球的学生","接球的学生"];
-function selectWord(k){let w=words[k]||words["篮球体育馆"];wordCn.textContent=w[0];wordPy.textContent=w[1];wordEn.textContent=w[2];wordDesc.textContent=w[3]}
-document.querySelectorAll('.hotspot[data-word]').forEach(el=>el.addEventListener('click',()=>{selectWord(el.dataset.word);sceneTip.textContent='✨ 你发现了：'+(words[el.dataset.word]?.[0]||el.dataset.word)+'！试着用中文说一说。'}));
-function nextWord(){let i=vocab.indexOf(wordCn.textContent);selectWord(vocab[(i+1+vocab.length)%vocab.length])}
-function speak(t){if(!('speechSynthesis'in window)){alert('当前浏览器暂不支持语音朗读。');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=.82;speechSynthesis.speak(u)}
-function speakWord(){speak(wordCn.textContent)}function speakQuestion(){speak(question.textContent)}
-const qs=[["小明在做什么？","What is Xiaoming doing?"],["篮球是什么形状？","What shape is a basketball?"],["我们把球投向哪里？","Where do we throw the ball?"],["比赛分数在哪里看？","Where can we see the score?"],["运动以后可以做什么？","What can we do after exercising?"]];let qi=0;
-function nextQuestion(){qi=(qi+1)%qs.length;question.textContent=qs[qi][0];questionEn.textContent=qs[qi][1]}
-const quizData=[
-{q:"打篮球的时候，我们用什么拍球？",a:["脚","手","头","耳朵"],c:1,why:"对！我们用手拍球。"},
-{q:"篮球通常是什么形状？",a:["正方形","三角形","圆形","长方形"],c:2,why:"很好！篮球是圆形的。"},
-{q:"篮球应该投向哪里？",a:["篮筐","水瓶","观众席","门"],c:0,why:"答对了！把球投进篮筐。"},
-{q:"“我喜欢打篮球”是什么意思？",a:["I like swimming.","I like playing basketball.","I like running.","I like reading."],c:1,why:"太棒了！“喜欢”表示 like。"},
-{q:"运动以后，我们可以喝什么？",a:["水","颜料","沙子","胶水"],c:0,why:"正确！运动后记得适当补充水分。"}
-];let qn=0,score=0,done=false;
-function renderQuiz(){let q=quizData[qn];quizQuestion.textContent=q.q;answers.innerHTML=q.a.map((a,i)=>`<button class="answer" onclick="checkAnswer(${i})">${a}</button>`).join('');feedback.textContent='选一个答案吧！ Choose an answer.';qNum.textContent=qn+1;progressBar.style.width=(qn/5*100)+'%';done=false}
-function checkAnswer(i){if(done)return;done=true;let q=quizData[qn],bs=[...answers.children];bs[i].classList.add(i===q.c?'correct':'wrong');if(i===q.c){score++;document.getElementById('score').textContent=score;feedback.textContent='🎉 '+q.why}else{bs[q.c].classList.add('correct');feedback.textContent='再看看！正确答案是：'+q.a[q.c]}setTimeout(()=>{if(qn<4){qn++;renderQuiz()}else{quizQuestion.textContent='挑战完成！你真棒！';answers.innerHTML='<button class="answer" onclick="restartQuiz()">再玩一次 ↻</button>';feedback.textContent='你的得分：'+score+' / 5 ⭐';progressBar.style.width='100%'}},1250)}
-function restartQuiz(){qn=0;score=0;document.getElementById('score').textContent='0';renderQuiz()}
-function animateAction(a){resetAction(false);let p=document.getElementById('playerA'),b=document.getElementById('playerB'),ball=document.getElementById('movingBall');if(a==='dribble'){p.classList.add('dribble');sceneTip.textContent='🏀 小明正在运球！他用手拍球。'}if(a==='shoot'){p.classList.add('shoot');ball.classList.add('fly');sceneTip.textContent='🎯 小明跳起来投篮！球飞向篮筐。';setTimeout(()=>{ball.classList.remove('fly');ball.setAttribute('transform','translate(835 260)')},1000)}if(a==='pass'){ball.classList.add('fly');b.classList.add('catch');sceneTip.textContent='🤝 小明把球传给小美。小美准备接球！';setTimeout(()=>{ball.classList.remove('fly');ball.setAttribute('transform','translate(570 470)')},1000)}if(a==='run'){p.classList.add('run');sceneTip.textContent='🏃 小明正在跑步！'}if(a==='jump'){p.classList.add('jump');sceneTip.textContent='🙌 小明跳起来了！'}}
-function resetAction(tip=true){let p=document.getElementById('playerA'),b=document.getElementById('playerB'),ball=document.getElementById('movingBall');['dribble','shoot','run','jump'].forEach(c=>p.classList.remove(c));b.classList.remove('catch');ball.classList.remove('fly');ball.setAttribute('transform','translate(330 470)');if(tip)sceneTip.textContent='动作已重置。选择一个动作试试看！'}
-const zones={basketball:["🏀 篮球体育馆 Basketball Gym","点一点场馆里的物品和人物，开始探索！"],badminton:["🏸 羽毛球区 Badminton Court","认识球拍、羽毛球和打球动作。"],swim:["🏊 游泳池 Swimming Pool","认识泳池、泳镜和游泳用品。"],track:["🏃 跑道 Running Track","学习跑步、运动用品和动作。"]};
-document.querySelectorAll('[data-zone]').forEach(btn=>btn.addEventListener('click',()=>{let z=btn.dataset.zone;document.querySelectorAll('.pill').forEach(x=>x.classList.toggle('active',x===btn));zoneTitle.textContent=zones[z][0];zoneSub.textContent=zones[z][1];if(z==='basketball'){basketballScene.style.display='';otherScene.style.display='none';sceneTip.textContent='👆 点击篮筐、篮球、记分牌或两位学生！'}else{basketballScene.style.display='none';otherScene.style.display='';let data=z==='badminton'?["羽毛球","球拍","球网","运动员"]:z==='swim'?["游泳池","泳镜","泳帽","救生员"]:["跑道","起跑线","运动鞋","运动员"];let emoji=z==='badminton'?["🏸","🎾","〰️","🏃"]:z==='swim'?["💦","🥽","🧢","🛟"]:["🏃","🏁","👟","🏃"];otherScene.innerHTML=`<rect width="1000" height="610" fill="${z==='swim'?'#a8e5f4':z==='track'?'#d9f0d7':'#dff5ff'}"/><rect y="360" width="1000" height="250" fill="${z==='swim'?'#36b8d5':z==='track'?'#6ab77c':'#d9a66b'}"/>${data.map((v,i)=>`<g class="hotspot" onclick="selectWord('${v}')"><rect class="focusable" x="${45+i*240}" y="180" width="190" height="210" rx="24" fill="#fff" opacity=".65" stroke="#fff" stroke-width="5"/><text x="${140+i*240}" y="290" text-anchor="middle" font-size="72">${emoji[i]}</text><text x="${140+i*240}" y="345" text-anchor="middle" font-size="26" font-weight="bold" fill="#17364d">${v}</text></g>`).join('')}<text x="500" y="90" text-anchor="middle" font-size="34" font-weight="900" fill="#17364d">${zones[z][0]}</text>`;sceneTip.textContent=z==='swim'?'💧 下水前要热身，并听从老师或救生员安排。':'👆 点击物品学习新词！'}}));
-vocabGrid.innerHTML=vocab.map(k=>`<button class="vocab" onclick="selectWord('${k}')"><b>${words[k][0]}</b><span>${words[k][1]} · ${words[k][2]}</span></button>`).join('');
-renderQuiz();
-</script></body></html>
+
+/* Scene-specific coaching: these instructions are deliberately separated from
+   the vocabulary and quiz data so each area teaches its own movement correctly. */
+const teachingGuides = {
+ basketball: {
+  safety:["先做肩膀、手腕和脚踝热身。","运球时抬头观察周围，不要撞到别人。","投篮练习要轮流进行，不要站在篮筐正下方。"],
+  steps:[
+   ["准备姿势","双脚自然分开，膝盖微微弯曲，身体保持平衡。"],
+   ["运球 Dribble","用手指和手掌控制球，轻轻向地面拍球；球弹回来时继续控制。"],
+   ["传球 Pass","看一看队友的位置，双手把球推向队友胸前。"],
+   ["投篮 Shoot","眼睛看篮筐，屈膝、伸展手臂，把球向篮筐方向投出。"]
+  ],
+  say:"请用“我先……然后……”说出投篮的两个步骤。"
+ },
+ badminton: {
+  safety:["先活动肩膀、手腕和膝盖。","挥拍前先看一看旁边有没有人。","不要用球拍追打别人；捡球时注意脚下。"],
+  steps:[
+   ["握拍 Grip","轻轻握住拍柄，不要把手握得太紧。"],
+   ["准备姿势 Ready","双脚分开，膝盖微弯，身体面向球网。"],
+   ["发球 Serve","观察对方场地，轻轻把球发过球网。"],
+   ["移动与击球 Footwork","先移动脚步到球附近，再挥拍击球，击球后回到准备位置。"]
+  ],
+  say:"试着说：“我先发球，然后移动脚步，再击球。”"
+ },
+ swim: {
+  safety:["必须有老师或救生员在场看护；不会游泳时不要独自下水。","下水前热身，先确认水深和泳池规则。","不要在池边奔跑、推人或跳入未知水深的区域。"],
+  steps:[
+   ["戴好装备","戴好泳帽和泳镜，检查是否舒适。"],
+   ["扶边练习打水","双手扶住池边，在老师指导下轻轻打水。"],
+   ["学习划水","在浅水区或老师指导下练习手臂动作。"],
+   ["配合呼吸","按照老师示范练习呼吸，不憋气、不逞强。"]
+  ],
+  say:"说一说：“游泳前，我要先……”。"
+ },
+ track: {
+  safety:["跑步前做动态热身，确认跑道没有障碍物。","跨栏和跳高需要在老师指导下进行，使用合适的软垫和器材。","跳远落入沙坑后要注意观察周围，离开落地区再让下一位开始。"],
+  steps:[
+   ["跑步 Run","身体微微前倾，手臂自然前后摆动，目视前方。"],
+   ["跨栏 Hurdles","先稳定助跑，再抬起前腿越过栏架，落地后继续向前。"],
+   ["跳远 Long jump","助跑、单脚起跳、身体向前伸展，落入沙坑。"],
+   ["跳高 High jump","听从老师安排助跑和起跳，越过横杆后落在软垫上。"]
+  ],
+  say:"请用“运动员正在……”描述你看到的一个动作。"
+ }
+};
+
+/* Extra scene-specific labels for clickable details that are not part of the
+   core word list. This prevents a click from ever showing another scene's word. */
+const extraWords = {
+ basketball: {
+  "灯光":["灯光","dēng guāng","lights","体育馆顶部的灯光照亮整个球场。"]
+ },
+ badminton: {},
+ swim: {},
+ track: {}
+};
+
+/* Four individually drawn SVG environments. Each clickable object has a word key
+   that exists in that scene's own vocabulary list. */
+function basketSVG(){return `
+<defs>
+ <linearGradient id="gymWall" x2="0" y2="1"><stop stop-color="#dff5ff"/><stop offset="1" stop-color="#a9d9ee"/></linearGradient>
+ <linearGradient id="gymFloor" x2="0" y2="1"><stop stop-color="#f5d08c"/><stop offset="1" stop-color="#bd743c"/></linearGradient>
+</defs>
+<rect width="1000" height="620" fill="url(#gymWall)"/>
+<path d="M0 0H1000V75L500 115 0 75Z" fill="#f7fbff"/><path d="M0 75L500 115 1000 75" fill="none" stroke="#9bc5d8" stroke-width="8"/>
+<g class="hotspot" data-word="灯光" tabindex="0"><path class="focusable" d="M100 70h180l-25 25H125ZM410 82h180l-25 25H435ZM720 70h180l-25 25H745Z" fill="#fff9d7" stroke="#e7bd62" stroke-width="3"/><text x="190" y="57" text-anchor="middle" class="hotspot-label">灯光</text></g>
+<g opacity=".9"><rect x="28" y="125" width="190" height="126" rx="8" fill="#9bd8ef" stroke="#fff" stroke-width="10"/><path d="M123 125v126M28 188h190" stroke="#fff" stroke-width="7"/><rect x="782" y="125" width="190" height="126" rx="8" fill="#9bd8ef" stroke="#fff" stroke-width="10"/><path d="M877 125v126M782 188h190" stroke="#fff" stroke-width="7"/></g>
+<g class="hotspot" data-word="记分牌" tabindex="0"><rect class="focusable" x="385" y="120" width="230" height="79" rx="12" fill="#17364d" stroke="#fff" stroke-width="5"/><text x="500" y="151" text-anchor="middle" fill="#ffdf69" font-size="16" font-weight="bold">HOME　 GUEST</text><text x="500" y="183" text-anchor="middle" fill="#fff" font-size="28" font-weight="900">12 : 08</text><text x="500" y="109" text-anchor="middle" class="hotspot-label">记分牌</text></g>
+<g class="hotspot" data-word="观众席" tabindex="0"><path class="focusable" d="M0 262h245v54H0zM755 262h245v54H755z" fill="#547f9e"/><path d="M0 316h245v32H0zM755 316h245v32H755z" fill="#315e7d"/><g font-size="26"><text x="30" y="298">🙂</text><text x="80" y="298">😄</text><text x="130" y="298">🙌</text><text x="780" y="298">👏</text><text x="830" y="298">🙂</text><text x="880" y="298">😄</text></g><text x="122" y="253" text-anchor="middle" class="hotspot-label">观众席</text></g>
+<path d="M0 350H1000V620H0Z" fill="url(#gymFloor)"/><path d="M0 368H1000M0 600H1000" stroke="#96562e" stroke-width="5" opacity=".5"/>
+<path d="M75 385H925V588H75Z" fill="none" stroke="#fff0d0" stroke-width="5"/><path d="M500 385V588" stroke="#fff0d0" stroke-width="5"/><circle cx="500" cy="485" r="62" fill="none" stroke="#fff0d0" stroke-width="5"/><path d="M75 420Q250 420 250 485T75 550M925 420Q750 420 750 485T925 550" fill="none" stroke="#fff0d0" stroke-width="5"/>
+<g class="hotspot" data-word="篮筐" tabindex="0"><path class="focusable" d="M840 217V374" stroke="#526a79" stroke-width="13"/><rect x="788" y="205" width="112" height="80" rx="6" fill="#f5fbff" stroke="#4d7893" stroke-width="7"/><rect x="823" y="228" width="45" height="27" fill="none" stroke="#e96b4e" stroke-width="5"/><path d="M799 277h90" stroke="#f06c4e" stroke-width="8"/><path d="M804 280l10 42 15 5 15-5 15 5 15-5 10-42" fill="none" stroke="#fff" stroke-width="3"/><text x="850" y="191" text-anchor="middle" class="hotspot-label">篮筐</text></g>
+<g class="hotspot" data-word="篮板" tabindex="0"><rect class="focusable" x="788" y="205" width="112" height="80" rx="6" fill="none" stroke="transparent" stroke-width="5"/><text x="918" y="235" class="hotspot-label">篮板</text></g>
+<g class="hotspot" data-word="篮球" tabindex="0"><circle class="focusable" cx="710" cy="530" r="30" fill="#f47b32" stroke="#9a431d" stroke-width="3"/><path d="M680 530h60M710 500v60M690 508q28 20 40 44M730 508q-28 20-40 44" fill="none" stroke="#703b23" stroke-width="3"/><text x="710" y="580" text-anchor="middle" class="hotspot-label">篮球</text></g>
+<g class="hotspot" data-word="运动鞋" tabindex="0"><path class="focusable" d="M155 535q22-10 33-35l17 10q8 22 34 28 18 5 12 22H155q-12-12 0-25Z" fill="#fff" stroke="#4d7893" stroke-width="4"/><path d="M178 532l30 8M185 522l24 9" stroke="#ff765e" stroke-width="4"/><text x="196" y="580" text-anchor="middle" class="hotspot-label">运动鞋</text></g>
+<g class="hotspot" data-word="水瓶" tabindex="0"><rect class="focusable" x="55" y="478" width="35" height="78" rx="9" fill="#55c8df" stroke="#fff" stroke-width="4"/><rect x="63" y="466" width="18" height="15" rx="4" fill="#fff"/><text x="72" y="580" text-anchor="middle" class="hotspot-label">水瓶</text></g>
+<g id="basketPlayer" class="hotspot" data-word="运球" tabindex="0" transform="translate(300 390)"><g class="character"><circle cx="0" cy="12" r="22" fill="#f3bd91" stroke="#9a6049" stroke-width="2"/><path d="M-21 7q2-27 25-19 19 7 17 27-10-10-22-10-8 7-20 2" fill="#49352e"/><path d="M-28 41Q0 27 28 41L34 100H-34Z" fill="#ff765e" stroke="#b84d45" stroke-width="3"/><text x="0" y="79" text-anchor="middle" fill="white" font-size="17" font-weight="900">12</text><path d="M-24 48L-50 89M24 48L48 88" stroke="#f3bd91" stroke-width="12" stroke-linecap="round"/><path class="legs" d="M-17 100L-25 148M17 100L27 148" stroke="#244d75" stroke-width="16" stroke-linecap="round"/><path d="M-38 151h27M15 151h29" stroke="#fff" stroke-width="12" stroke-linecap="round"/></g><circle class="dribbleBall" cx="55" cy="112" r="17" fill="#f47b32" stroke="#8e421e" stroke-width="2"/><path d="M38 112h34M55 95v34" stroke="#713c22" stroke-width="2"/><text x="0" y="-20" text-anchor="middle" class="hotspot-label">小明</text></g>
+<g id="receiver" class="hotspot" data-word="传球" tabindex="0" transform="translate(570 400)"><g class="character"><circle cx="0" cy="12" r="21" fill="#d99b70" stroke="#9a6049" stroke-width="2"/><path d="M-21 6q5-25 27-19 15 5 16 21-17-7-25-4" fill="#292f42"/><path d="M-27 39Q0 29 27 39L33 96H-33Z" fill="#4b9bcb" stroke="#2b648b" stroke-width="3"/><text x="0" y="74" text-anchor="middle" fill="white" font-size="16" font-weight="900">8</text><path d="M-24 47L-46 69M24 47L46 69" stroke="#d99b70" stroke-width="12" stroke-linecap="round"/><path d="M-16 96L-21 141M16 96L21 141" stroke="#315477" stroke-width="15" stroke-linecap="round"/><path d="M-34 144h25M9 144h27" stroke="#fff" stroke-width="11" stroke-linecap="round"/></g><text x="0" y="-20" text-anchor="middle" class="hotspot-label">小美</text></g>
+<g id="shootBall" transform="translate(330 485)"><circle r="13" fill="#f47b32" stroke="#8e421e" stroke-width="2"/><path d="M-13 0h26M0-13v26" stroke="#713c22" stroke-width="2"/></g>
+<g id="passBall" transform="translate(330 485)"><circle r="11" fill="#f47b32" stroke="#8e421e" stroke-width="2"/><path d="M-11 0h22M0-11v22" stroke="#713c22" stroke-width="2"/></g>`}
+
+function badmintonSVG(){return `
+<defs><linearGradient id="badWall" x2="0" y2="1"><stop stop-color="#e5f7ff"/><stop offset="1" stop-color="#bfe4ef"/></linearGradient><linearGradient id="badFloor" x2="0" y2="1"><stop stop-color="#5eb889"/><stop offset="1" stop-color="#267b5b"/></linearGradient></defs>
+<rect width="1000" height="620" fill="url(#badWall)"/>
+<path d="M0 0H1000V95H0Z" fill="#f8fcff"/><path d="M80 90H920" stroke="#aacbd9" stroke-width="8"/>
+<g opacity=".75"><rect x="45" y="125" width="180" height="110" rx="9" fill="#a9dff0" stroke="white" stroke-width="9"/><rect x="775" y="125" width="180" height="110" rx="9" fill="#a9dff0" stroke="white" stroke-width="9"/></g>
+<path d="M0 290H1000V620H0Z" fill="url(#badFloor)"/>
+<path d="M90 315H910V580H90Z" fill="none" stroke="#fff" stroke-width="5"/><path d="M500 315V580M90 360H910M90 535H910M250 315V580M750 315V580" fill="none" stroke="#fff" stroke-width="4" opacity=".9"/>
+<g class="hotspot" data-word="球网" tabindex="0"><path class="focusable" d="M95 392H905" stroke="#fff" stroke-width="5"/><path d="M95 392V550M905 392V550" stroke="#fff" stroke-width="8"/><path d="M95 405H905M95 422H905M95 439H905M95 456H905M95 473H905M95 490H905M95 507H905M95 524H905M95 541H905" stroke="#e7f7f1" stroke-width="2"/><text x="500" y="378" text-anchor="middle" class="hotspot-label">球网</text></g>
+<g class="hotspot" data-word="球场边线" tabindex="0"><rect class="focusable" x="90" y="315" width="820" height="265" fill="transparent" stroke="transparent" stroke-width="5"/><text x="145" y="605" class="hotspot-label">球场边线</text></g>
+<g class="hotspot" data-word="记分牌" tabindex="0"><rect class="focusable" x="412" y="120" width="176" height="75" rx="10" fill="#17364d" stroke="#fff" stroke-width="5"/><text x="500" y="150" text-anchor="middle" fill="#ffe17b" font-size="15" font-weight="bold">PLAYER A / B</text><text x="500" y="181" text-anchor="middle" fill="#fff" font-size="26" font-weight="900">14 : 11</text><text x="500" y="108" text-anchor="middle" class="hotspot-label">记分牌</text></g>
+<g id="badmintonA" class="hotspot" data-word="发球" tabindex="0" transform="translate(285 340)"><g class="character"><circle cx="0" cy="7" r="23" fill="#edbd91" stroke="#9a6049" stroke-width="2"/><path d="M-22 0q7-27 29-17 15 7 15 22-17-10-28-5" fill="#49352e"/><path d="M-30 37Q0 22 30 37L35 105H-35Z" fill="#ffcc59" stroke="#b58026" stroke-width="3"/><path d="M-25 46L-50 83M25 46L45 12" stroke="#edbd91" stroke-width="12" stroke-linecap="round"/><path class="legs" d="M-18 104L-30 153M18 104L33 153" stroke="#2d4c75" stroke-width="15" stroke-linecap="round"/><path d="M-43 156h27M20 156h28" stroke="#fff" stroke-width="11" stroke-linecap="round"/></g><g transform="translate(64 -13) rotate(25)"><ellipse cx="0" cy="0" rx="19" ry="26" fill="none" stroke="#285b84" stroke-width="5"/><path d="M-16-10L16 10M-17 0L17 0M-12 17L12-17M0-24V24" stroke="#fff" stroke-width="2"/><path d="M0 25L-9 63" stroke="#b77a42" stroke-width="8" stroke-linecap="round"/></g><text x="0" y="-25" text-anchor="middle" class="hotspot-label">小安发球</text></g>
+<g class="hotspot" data-word="击球" tabindex="0" transform="translate(715 340)"><circle cx="0" cy="7" r="23" fill="#d69b70" stroke="#9a6049" stroke-width="2"/><path d="M-22 0q7-27 29-17 15 7 15 22-17-10-28-5" fill="#292f42"/><path d="M-30 37Q0 22 30 37L35 105H-35Z" fill="#57a8d5" stroke="#2b648b" stroke-width="3"/><path d="M-25 46L-45 10M25 46L52 80" stroke="#d69b70" stroke-width="12" stroke-linecap="round"/><path d="M-18 104L-28 153M18 104L28 153" stroke="#294c75" stroke-width="15" stroke-linecap="round"/><path d="M-40 156h27M16 156h29" stroke="#fff" stroke-width="11" stroke-linecap="round"/><g transform="translate(-48 -5) rotate(-28)"><ellipse cx="0" cy="0" rx="18" ry="25" fill="none" stroke="#285b84" stroke-width="5"/><path d="M-15-12L15 12M-16 0H16M-11 17L11-17" stroke="#fff" stroke-width="2"/><path d="M0 24L0 62" stroke="#b77a42" stroke-width="8" stroke-linecap="round"/></g><text x="0" y="-25" text-anchor="middle" class="hotspot-label">小乐击球</text></g>
+<g id="shuttle" class="hotspot" data-word="羽毛球" tabindex="0" transform="translate(490 340)"><path class="focusable" d="M0 0L-18 34L18 34Z" fill="#fff" stroke="#8ba6b7" stroke-width="3"/><path d="M-14 30L-8 47M-5 32L-2 48M5 32L4 48M14 30L9 47" stroke="#d7e4e8" stroke-width="4"/><ellipse cx="0" cy="49" rx="10" ry="6" fill="#d4a16e"/><text x="0" y="-14" text-anchor="middle" class="hotspot-label">羽毛球</text></g>
+<g class="hotspot" data-word="长椅" tabindex="0"><path class="focusable" d="M70 235H205V250H70ZM85 250V280M190 250V280" fill="#b78355" stroke="#865b39" stroke-width="4"/><text x="137" y="226" text-anchor="middle" class="hotspot-label">长椅</text></g>
+<g class="hotspot" data-word="运动鞋" tabindex="0"><path class="focusable" d="M825 250q20-10 29-31l17 9q8 21 28 24 18 5 12 18H825q-12-10 0-20Z" fill="#fff" stroke="#55748b" stroke-width="3"/><text x="870" y="297" text-anchor="middle" class="hotspot-label">运动鞋</text></g>`}
+
+function swimSVG(){return `
+<defs><linearGradient id="poolWall" x2="0" y2="1"><stop stop-color="#dcf7ff"/><stop offset="1" stop-color="#b9e8f1"/></linearGradient><linearGradient id="water" x2="0" y2="1"><stop stop-color="#62d2e8"/><stop offset="1" stop-color="#168fb9"/></linearGradient></defs>
+<rect width="1000" height="620" fill="url(#poolWall)"/>
+<path d="M0 0H1000V88H0Z" fill="#f8fdff"/><g fill="#a8dbea" stroke="#fff" stroke-width="8"><rect x="55" y="115" width="190" height="120" rx="8"/><rect x="755" y="115" width="190" height="120" rx="8"/></g>
+<g class="hotspot" data-word="救生员" tabindex="0"><rect class="focusable" x="830" y="245" width="115" height="125" rx="10" fill="#fff2d8" stroke="#b48a4e" stroke-width="4"/><path d="M855 260V330M920 260V330" stroke="#b48a4e" stroke-width="8"/><circle cx="887" cy="257" r="18" fill="#efbe92"/><path d="M865 278h44l13 54h-68Z" fill="#f26f55"/><path d="M870 330v28M904 330v28" stroke="#2e5474" stroke-width="10" stroke-linecap="round"/><text x="887" y="395" text-anchor="middle" class="hotspot-label">救生员</text></g>
+<path d="M0 280H1000V620H0Z" fill="url(#water)"/>
+<path d="M0 280H1000" stroke="#fff" stroke-width="11"/><g opacity=".65" fill="none" stroke="#c8f7ff" stroke-width="4"><path d="M30 320q30-15 60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0"/><path d="M20 585q30-15 60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0t60 0"/></g>
+<g class="hotspot" data-word="泳道" tabindex="0"><path class="focusable" d="M0 390H1000M0 500H1000" stroke="#fff" stroke-width="5" stroke-dasharray="18 12"/><path d="M0 445H1000" stroke="#ffdb6a" stroke-width="7" stroke-dasharray="18 10"/><text x="500" y="370" text-anchor="middle" class="hotspot-label">泳道</text></g>
+<g class="hotspot" data-word="游泳池" tabindex="0"><rect class="focusable" x="15" y="292" width="970" height="310" fill="transparent" stroke="transparent" stroke-width="5"/><text x="500" y="600" text-anchor="middle" class="hotspot-label">游泳池</text></g>
+<g id="swimmer1" class="hotspot" data-word="自由泳" tabindex="0" transform="translate(300 395)"><g class="character"><ellipse cx="0" cy="0" rx="48" ry="25" fill="#f5be91" stroke="#b8795d" stroke-width="3"/><path d="M-35 -8q18-32 54-10" fill="none" stroke="#343d50" stroke-width="15" stroke-linecap="round"/><rect x="-27" y="-9" width="19" height="11" rx="5" fill="#86dfff" stroke="#fff" stroke-width="3"/><path d="M25 -6L65 -35" stroke="#f5be91" stroke-width="13" stroke-linecap="round"/><path d="M-25 14L-65 30M-65 30L-87 25" stroke="#f5be91" stroke-width="12" stroke-linecap="round"/><path class="legs" d="M-22 15L-66 22M-18 20L-58 42" stroke="#f0b487" stroke-width="10" stroke-linecap="round"/></g><text x="0" y="-42" text-anchor="middle" class="hotspot-label">自由泳</text></g>
+<g id="swimmer2" class="hotspot" data-word="蛙泳" tabindex="0" transform="translate(650 505)"><g class="character"><ellipse cx="0" cy="0" rx="45" ry="22" fill="#e8ae80" stroke="#b8795d" stroke-width="3"/><path d="M-32 -9q18-29 50-8" fill="none" stroke="#3e3b39" stroke-width="14" stroke-linecap="round"/><rect x="-23" y="-7" width="17" height="10" rx="5" fill="#87dcff" stroke="#fff" stroke-width="3"/><path d="M-35 -5L-62 -24M35 -5L62 -24" stroke="#e8ae80" stroke-width="11" stroke-linecap="round"/><path class="legs" d="M24 12L64 25M-24 12L-64 25" stroke="#e8ae80" stroke-width="11" stroke-linecap="round"/></g><text x="0" y="-38" text-anchor="middle" class="hotspot-label">蛙泳</text></g>
+<g class="hotspot" data-word="泳镜" tabindex="0"><rect class="focusable" x="100" y="145" width="115" height="55" rx="20" fill="#fff" stroke="#8da9b6" stroke-width="5"/><path d="M110 172h96M155 150v43" stroke="#61bde4" stroke-width="5"/><text x="158" y="222" text-anchor="middle" class="hotspot-label">泳镜</text></g>
+<g class="hotspot" data-word="泳帽" tabindex="0"><path class="focusable" d="M280 195q0-53 50-53t50 53Z" fill="#318ee7" stroke="#2364a8" stroke-width="4"/><text x="330" y="222" text-anchor="middle" class="hotspot-label">泳帽</text></g>
+<g class="hotspot" data-word="浮板" tabindex="0"><path class="focusable" d="M500 185q45-30 90 0l-8 45q-37 18-75 0Z" fill="#ffca57" stroke="#d28e2d" stroke-width="4"/><text x="545" y="255" text-anchor="middle" class="hotspot-label">浮板</text></g>
+<g class="hotspot" data-word="泳池梯" tabindex="0"><path class="focusable" d="M955 290V430M980 290V430M955 320H980M955 355H980M955 390H980" fill="none" stroke="#f2f8fa" stroke-width="9" stroke-linecap="round"/><text x="930" y="465" text-anchor="middle" class="hotspot-label">泳池梯</text></g>`}
+
+function trackSVG(){return `
+<defs><linearGradient id="trackSky" x2="0" y2="1"><stop stop-color="#dff4ff"/><stop offset="1" stop-color="#bce3ef"/></linearGradient><linearGradient id="trackRed" x2="0" y2="1"><stop stop-color="#ee967d"/><stop offset="1" stop-color="#c95049"/></linearGradient></defs>
+<rect width="1000" height="620" fill="url(#trackSky)"/>
+<circle cx="850" cy="115" r="44" fill="#ffdc82"/>
+<g fill="#fff" opacity=".8"><ellipse cx="170" cy="120" rx="70" ry="22"/><ellipse cx="215" cy="115" rx="48" ry="28"/><ellipse cx="550" cy="95" rx="65" ry="20"/></g>
+<path d="M0 260H1000V620H0Z" fill="#65ac78"/>
+<path d="M0 370Q500 240 1000 370V620H0Z" fill="url(#trackRed)"/>
+<path d="M0 405Q500 275 1000 405M0 455Q500 325 1000 455M0 505Q500 375 1000 505M0 555Q500 425 1000 555" fill="none" stroke="#fff" stroke-width="5" opacity=".9"/>
+<path d="M0 370Q500 240 1000 370" fill="none" stroke="#fff" stroke-width="5"/>
+<g class="hotspot" data-word="跑道" tabindex="0"><path class="focusable" d="M0 380Q500 250 1000 380V620H0Z" fill="transparent" stroke="transparent" stroke-width="5"/><text x="120" y="580" class="hotspot-label">跑道</text></g>
+<g class="hotspot" data-word="起跑线" tabindex="0"><path class="focusable" d="M90 382L100 440" stroke="#fff" stroke-width="7"/><text x="110" y="365" class="hotspot-label">起跑线</text></g>
+<g class="hotspot" data-word="终点线" tabindex="0"><path class="focusable" d="M900 340L915 400" stroke="#fff" stroke-width="8"/><path d="M900 340l12 0 2 10-12 0 2 10 12 0" fill="#fff"/><text x="890" y="320" text-anchor="middle" class="hotspot-label">终点线</text></g>
+<g class="hotspot" data-word="栏架" tabindex="0"><path class="focusable" d="M360 400L360 492M470 376L470 468M360 410H470" stroke="#fff" stroke-width="9" fill="none"/><path d="M345 492h30M455 468h30" stroke="#354e65" stroke-width="9"/><text x="415" y="365" text-anchor="middle" class="hotspot-label">栏架</text></g>
+<g id="hurdler" class="hotspot" data-word="跨栏" tabindex="0" transform="translate(410 378)"><g class="character"><circle cx="0" cy="0" r="18" fill="#efbd91" stroke="#a56e54" stroke-width="2"/><path d="M-17 -7q10-20 24-8" fill="none" stroke="#3f3540" stroke-width="10" stroke-linecap="round"/><path d="M-22 24L20 24L25 72L-28 72Z" fill="#f7cc58" stroke="#bb882b" stroke-width="3"/><path d="M-20 34L-50 9M20 34L48 2" stroke="#efbd91" stroke-width="10" stroke-linecap="round"/><path d="M-15 72L-37 105M15 72L42 90" stroke="#274c74" stroke-width="12" stroke-linecap="round"/><path d="M-49 106h24M34 92h23" stroke="#fff" stroke-width="8" stroke-linecap="round"/></g><text x="0" y="-28" text-anchor="middle" class="hotspot-label">跨栏选手</text></g>
+<g class="hotspot" data-word="沙坑" tabindex="0"><rect class="focusable" x="40" y="485" width="220" height="95" rx="12" fill="#e8c28a" stroke="#fff0cf" stroke-width="5"/><path d="M55 515q35-18 65 0t65 0t60 0" fill="none" stroke="#c59b61" stroke-width="4"/><text x="150" y="570" text-anchor="middle" class="hotspot-label">沙坑</text></g>
+<g id="longJumper" class="hotspot" data-word="跳远" tabindex="0" transform="translate(180 450)"><g class="character"><circle cx="0" cy="0" r="16" fill="#eab68a"/><path d="M-15 -6q10-17 23-7" fill="none" stroke="#3b3540" stroke-width="9"/><path d="M-20 22H20L25 61H-25Z" fill="#55a7d5" stroke="#28658c" stroke-width="3"/><path d="M-17 30L-44 4M17 30L47 10" stroke="#eab68a" stroke-width="9" stroke-linecap="round"/><path d="M-14 61L-45 78M14 61L45 85" stroke="#274c74" stroke-width="11" stroke-linecap="round"/></g><text x="0" y="-28" text-anchor="middle" class="hotspot-label">跳远</text></g>
+<g class="hotspot" data-word="跳高" tabindex="0"><rect class="focusable" x="700" y="280" width="250" height="12" rx="5" fill="#fff" stroke="#bb564c" stroke-width="4"/><path d="M715 290V400M935 290V400" stroke="#e9edf0" stroke-width="12"/><rect x="700" y="400" width="250" height="45" rx="10" fill="#7f9ec3" stroke="#fff" stroke-width="4"/><text x="830" y="265" text-anchor="middle" class="hotspot-label">跳高横杆</text></g>
+<g id="highJumper" class="hotspot" data-word="跳高" tabindex="0" transform="translate(830 365)"><g class="character"><circle cx="-5" cy="-35" r="16" fill="#eab68a"/><path d="M-20 -42q12-20 26-5" fill="none" stroke="#3b3540" stroke-width="9"/><path d="M-27 -12L18 -18L38 18L-10 28Z" fill="#ba78c7" stroke="#76508a" stroke-width="3"/><path d="M-20 -8L-47 -29M15 -14L42 -32" stroke="#eab68a" stroke-width="9" stroke-linecap="round"/><path d="M-8 26L-34 51M23 20L47 35" stroke="#274c74" stroke-width="11" stroke-linecap="round"/></g></g>
+<g class="hotspot" data-word="接力赛" tabindex="0"><circle class="focusable" cx="590" cy="505" r="25" fill="#f8d26c" stroke="#9b6f2f" stroke-width="3"/><path d="M575 490L605 520" stroke="#b36b32" stroke-width="8" stroke-linecap="round"/><text x="590" y="555" text-anchor="middle" class="hotspot-label">接力棒</text></g>
+<g class="hotspot" data-word="秒表" tabindex="0"><circle class="focusable" cx="90" cy="185" r="32" fill="#fff" stroke="#54718a" stroke-width="5"/><path d="M90 185V164M90 185L108 195M80 146h20" stroke="#54718a" stroke-width="5" stroke-linecap="round"/><text x="90" y="235" text-anchor="middle" class="hotspot-label">秒表</text></g>
+<g class="runner hotspot" data-word="跑道" tabindex="0" transform="translate(650 450)"><g class="character"><circle cx="0" cy="-38" r="17" fill="#eab68a"/><path d="M-16 -45q11-18 25-5" fill="none" stroke="#3b3540" stroke-width="9"/><path d="M-24 -14L20 -14L27 28H-30Z" fill="#ff765e" stroke="#ae5148" stroke-width="3"/><path d="M-18 -6L-47 10M17 -6L47 -28" stroke="#eab68a" stroke-width="10" stroke-linecap="round"/><path class="legs" d="M-15 28L-40 59M15 28L48 48" stroke="#294e77" stroke-width="12" stroke-linecap="round"/><path d="M-50 61h22M41 50h22" stroke="#fff" stroke-width="8" stroke-linecap="round"/></g><text x="0" y="-70" text-anchor="middle" class="hotspot-label">跑步选手</text></g>`}
+
+/* App state */
+let currentZone = "basketball";
+let currentWordIndex = 0;
+let questionIndex = 0;
+let quizIndex = 0;
+let score = 0;
+let answered = false;
+let quizCompleted = false;
+let quizTimer = null;
+const $ = id => document.getElementById(id);
+const zoneData = () => scenes[currentZone];
+const wordMap = () => new Map([...zoneData().words, ...Object.values(extraWords[currentZone] || {})].map(w => [w[0], w]));
+
+function setWord(key){
+  const w = wordMap().get(key);
+  if(!w){
+    $("wordCn").textContent = "找不到这个词";
+    $("wordPy").textContent = "";
+    $("wordEn").textContent = "";
+    $("wordDesc").textContent = "这个物品还没有加入当前场景的词汇表。";
+    return;
+  }
+  $("wordCn").textContent = w[0];
+  $("wordPy").textContent = w[1];
+  $("wordEn").textContent = w[2];
+  $("wordDesc").textContent = w[3];
+  currentWordIndex = zoneData().words.findIndex(x => x[0] === key);
+  $("sceneTip").textContent = "✨ " + w[0] + " · " + w[2] + "。试着用中文说一个句子！";
+}
+function nextWord(){
+  const list = zoneData().words;
+  currentWordIndex = (currentWordIndex + 1) % list.length;
+  setWord(list[currentWordIndex][0]);
+}
+function speak(text){
+  if(!("speechSynthesis" in window)){ $("sceneTip").textContent = "当前浏览器不支持语音朗读，请老师示范发音。"; return; }
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "zh-CN";
+  utterance.rate = 0.82;
+  window.speechSynthesis.speak(utterance);
+}
+function renderQuestions(){
+  const q = zoneData().questions[questionIndex % zoneData().questions.length];
+  $("teacherQuestion").textContent = q[0];
+  $("teacherQuestionEn").textContent = q[1];
+}
+function nextQuestion(){
+  questionIndex = (questionIndex + 1) % zoneData().questions.length;
+  renderQuestions();
+}
+function renderQuiz(){
+  clearTimeout(quizTimer);
+  const q = zoneData().quiz[quizIndex];
+  $("quizQuestion").textContent = q.q;
+  $("qNum").textContent = quizIndex + 1;
+  $("qTotal").textContent = zoneData().quiz.length;
+  $("answers").innerHTML = q.a.map((answer,i) =>
+    `<button type="button" class="answer" data-answer="${i}">${answer}</button>`
+  ).join("");
+  $("feedback").textContent = "选择一个答案吧！";
+  $("progressBar").style.width = (quizIndex / zoneData().quiz.length * 100) + "%";
+  answered = false;
+}
+function answerQuiz(index){
+  if(answered) return;
+  answered = true;
+  const q = zoneData().quiz[quizIndex];
+  const buttons = [...$("answers").querySelectorAll(".answer")];
+  if(index === q.c){
+    score++;
+    $("score").textContent = score;
+    buttons[index].classList.add("correct");
+    $("feedback").textContent = "🎉 " + q.why;
+  }else{
+    buttons[index].classList.add("wrong");
+    buttons[q.c].classList.add("correct");
+    $("feedback").textContent = "再看看！正确答案是：" + q.a[q.c] + "。" + q.why;
+  }
+  quizTimer = setTimeout(() => {
+    if(quizIndex < zoneData().quiz.length - 1){
+      quizIndex++;
+      renderQuiz();
+    }else{
+      quizCompleted = true;
+      $("quizQuestion").textContent = "本场景挑战完成！你真棒！";
+      $("answers").innerHTML = '<button type="button" class="answer" id="restartQuiz">↻ 再玩一次 / Try again</button>';
+      $("feedback").textContent = "你的得分：" + score + " / " + zoneData().quiz.length + " ⭐";
+      $("progressBar").style.width = "100%";
+    }
+  }, 1250);
+}
+function restartQuiz(){
+  clearTimeout(quizTimer);
+  quizCompleted = false;
+  quizIndex = 0;
+  score = 0;
+  $("score").textContent = "0";
+  renderQuiz();
+}
+function renderWords(){
+  $("vocabGrid").innerHTML = zoneData().words.map(w =>
+    `<button type="button" class="vocab" data-vocab="${w[0]}"><b>${w[0]}</b><span>${w[1]} · ${w[2]}</span></button>`
+  ).join("");
+}
+function renderSentences(){
+  $("sentenceBank").innerHTML = zoneData().sentences.map(s =>
+    `<div class="sentence"><strong>${s[0]}</strong><small>${s[1]}</small>${s[2]}</div>`
+  ).join("");
+}
+function renderTeachingGuide(){
+  const guide = teachingGuides[currentZone];
+  $("practiceContent").innerHTML =
+    guide.steps.map((s,i) => `<div class="practice-step"><span class="step-no">${i+1}</span><div><b>${s[0]}</b><small>${s[1]}</small></div></div>`).join("") +
+    `<div class="sentence"><strong>🗣️ 开口练习</strong><small>${guide.say}</small></div>`;
+  $("safetyContent").innerHTML = `<div class="safety-note"><strong>请记住 / Remember</strong>${guide.safety.map(x => "• " + x).join("<br>")}</div>`;
+}
+function renderActions(){
+  $("actionBar").innerHTML = zoneData().actions.map((a,i) =>
+    `<button type="button" class="action ${i===0?'primary':''}" data-action="${a[0]}">${a[1]}</button>`
+  ).join("");
+}
+function renderScene(zone){
+  const data = scenes[zone];
+  $("scene").innerHTML = data.svg();
+  $("scene").className.baseVal = "scene";
+  $("scene").setAttribute("aria-label", data.title);
+  $("zoneTitle").textContent = data.icon + " " + data.title;
+  $("zoneSub").textContent = data.sub;
+  $("sceneTip").textContent = data.tip;
+}
+function switchZone(zone){
+  if(!scenes[zone]) return;
+  clearTimeout(quizTimer);
+  currentZone = zone;
+  currentWordIndex = 0;
+  questionIndex = 0;
+  quizIndex = 0;
+  quizCompleted = false;
+  score = 0;
+  $("score").textContent = "0";
+  document.querySelectorAll(".tab").forEach(btn => btn.classList.toggle("active", btn.dataset.zone === zone));
+  renderScene(zone);
+  renderActions();
+  renderWords();
+  renderSentences();
+  renderTeachingGuide();
+  setWord(zoneData().words[0][0]);
+  $("sceneTip").textContent = zoneData().tip;
+  renderQuestions();
+  renderQuiz();
+  if(lessonActive){lessonStep=0;$("lessonNextBtn").disabled=false;renderLesson();}
+}
+function performAction(action){
+  const svg = $("scene");
+  svg.classList.remove("action-dribble","action-shoot","action-jump","action-pass","action-run","action-footwork","action-serve","action-rally","action-swim","action-kick","action-float","action-hurdle","action-longjump","action-highjump","action-trackrun");
+  void svg.getBoundingClientRect(); // restart CSS animation when the same action is clicked twice
+  if(action === "reset"){
+    $("sceneTip").textContent = "动作已重置。选择一个动作再试试看！";
+    return;
+  }
+  const classes = {
+    dribble:"action-dribble",shoot:"action-shoot",jump:"action-jump",pass:"action-pass",run:"action-run",
+    serve:"action-serve",rally:"action-rally",hit:"action-rally",run:"action-footwork",
+    swim:"action-swim",kick:"action-kick",float:"action-float",
+    hurdle:"action-hurdle",longjump:"action-longjump",highjump:"action-highjump",trackrun:"action-trackrun"
+  };
+  if(classes[action]) svg.classList.add(classes[action]);
+  const messages = {
+    dribble:"🏀 小明正在运球。他用手轻轻拍球。",
+    jump:"🙌 小明屈膝蹬地，向上跳起。",
+    shoot:"🎯 小明跳起来投篮！篮球飞向篮筐。",
+    pass:"🤝 小明把球传给小美，小美准备接球！",
+    run:"🏃 运动员正在跑动！注意双臂和双腿协调摆动。",
+    serve:"🏸 小安正在发球！羽毛球飞过球网。",
+    rally:"↔️ 两位运动员正在来回击球！",
+    hit:"🎾 运动员挥动球拍，把羽毛球打向对方。",
+    swim:"🏊 游泳运动员正在水里游自由泳！",
+    kick:"🦶 双腿有节奏地打水，身体向前移动。",
+    float:"🛟 身体放松，学习仰漂（back float）。必须在老师或救生员近距离看护下练习。",
+    hurdle:"🚧 运动员起跑、抬腿，越过栏架！",
+    longjump:"🦘 运动员助跑、起跳，向沙坑跳去！",
+    highjump:"🤸 运动员向上跳，努力越过横杆！",
+    trackrun:"🏃 选手沿着跑道向终点跑去！"
+  };
+  $("sceneTip").textContent = (action === "run" && currentZone === "badminton") ? "🏸 运动员正在移动脚步，调整位置，准备击球！" : (messages[action] || zoneData().tip);
+}
+
+/* Guided classroom flow: every lesson step reads the active scene's own data. */
+const lessonSteps = [
+  {title:"第一步：观察场景", hint:"先观察，再说出你看见的东西。"},
+  {title:"第二步：发现新词", hint:"点击词语，听一听，再跟老师读一遍。"},
+  {title:"第三步：听一听，说一说", hint:"听中文示范，用完整句子回答。"},
+  {title:"第四步：动起来", hint:"看动作示范，再安全地模仿动作。"},
+  {title:"第五步：小小闯关", hint:"完成当前场景的专属测验。"}
+];
+let lessonStep = 0;
+let lessonActive = false;
+
+function renderLesson(){
+  const step = lessonSteps[lessonStep];
+  const level = $("learnerLevel").value;
+  $("lessonStepTitle").textContent = step.title;
+  $("lessonStepHint").textContent = step.hint;
+  $("lessonStepCount").textContent = (lessonStep+1) + " / " + lessonSteps.length;
+  $("lessonProgress").innerHTML = lessonSteps.map((_,i)=>`<span class="${i<=lessonStep?'done':''}"></span>`).join("");
+  $("lessonPrevBtn").disabled = lessonStep === 0;
+  $("lessonNextBtn").textContent = lessonStep === lessonSteps.length-1 ? "完成课堂 ✓" : "下一步 →";
+  const words = zoneData().words.slice(1,4);
+  const sentence = zoneData().sentences[0];
+  const action = zoneData().actions[0];
+  const prompts = [
+    `<div class="lesson-instruction">${zoneData().tip}</div>
+     <div class="lesson-translation">Look carefully at the ${zoneData().titleEn} scene. Point to one object or person and name it.</div>
+     <div class="lesson-example">👩‍🏫 老师问：你看见了什么？<br>学生回答：我看见了……</div>`,
+    `<div class="lesson-instruction">今天先学习这三个词语：</div>
+     <div class="lesson-choices">${words.map(w=>`<button class="lesson-chip" type="button" data-lesson-word="${w[0]}">${w[0]} · ${w[2]}</button>`).join("")}</div>
+     <div class="lesson-example">点击词语查看词卡。先听普通话发音，再跟老师读两遍。</div>`,
+    `<div class="lesson-instruction">${level==="challenge" ? "试着自己说完整句子：" : "跟老师一起读这个句型："}</div>
+     <div class="lesson-example"><strong>${sentence[0]}</strong><br>${sentence[1]}<br>${sentence[2]}</div>
+     <div class="lesson-choices"><button class="lesson-chip" type="button" id="lessonSpeakSentence">🔊 听句子</button><button class="lesson-chip" type="button" id="lessonSpeakPrompt">🔊 听老师提问</button></div>
+     <p class="lesson-translation">${level==="challenge" ? "进阶挑战：把句子中的动作或物品换成你刚学的新词。" : "初级练习：先听，再慢慢跟读；不需要着急。"}</p>`,
+    `<div class="lesson-instruction">轮到你做动作啦！</div>
+     <div class="lesson-example">动作示范：<strong>${action[1]}</strong><br>先看网页动画，再在老师或家长指导下模仿。注意周围空间和安全。</div>
+     <div class="lesson-choices"><button class="lesson-chip" type="button" id="lessonDoAction">▶ 播放动作示范</button></div>`,
+    `<div class="lesson-instruction">准备好挑战了吗？</div>
+     <div class="lesson-example">请完成本场景的 ${zoneData().quiz.length} 道选择题。每题作答后会显示答案和简短解释。<br>⭐ 目标：认真思考，不只是猜答案！</div>
+     <div class="lesson-choices"><button class="lesson-chip" type="button" id="lessonGoQuiz">🎯 前往场景测验</button></div>`
+  ];
+  $("lessonContent").innerHTML = prompts[lessonStep];
+}
+function startLesson(){
+  lessonStep = 0;
+  lessonActive = true;
+  $("lessonGuide").hidden = false;
+  renderLesson();
+  $("lessonGuide").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function closeLesson(){
+  lessonActive = false;
+  $("lessonGuide").hidden = true;
+}
+function moveLesson(delta){
+  if(!lessonActive) return;
+  if(lessonStep === lessonSteps.length-1 && delta > 0){
+    if(!quizCompleted){
+      $("lessonStepHint").textContent = "先完成右侧本场景的全部测验题，再回来完成课堂。";
+      $("lessonContent").innerHTML = `<div class="lesson-instruction">还差最后一步！请先完成 ${zoneData().quiz.length} 道场景测验。</div><div class="lesson-example">完成全部测验题后，再回来点击“完成课堂”。</div><div class="lesson-choices"><button class="lesson-chip" type="button" id="lessonGoQuiz">🎯 前往场景测验</button></div>`;
+      return;
+    }
+    $("lessonStepTitle").textContent = "🎉 课堂完成！";
+    $("lessonStepHint").textContent = "你已经完成本场景的学习流程。可以换一个运动场景继续探索。";
+    $("lessonContent").innerHTML = `<div class="lesson-instruction">太棒了！今天你观察了场景、学习了词语、练习了句子和动作。</div><div class="lesson-example">老师可以请孩子用一句话总结：我今天学会了……</div><div class="lesson-choices"><button class="lesson-chip" type="button" id="lessonRestart">↻ 再上一遍</button><button class="lesson-chip" type="button" id="lessonCloseDone">完成</button></div>`;
+    $("lessonStepCount").textContent = "完成";
+    $("lessonProgress").innerHTML = lessonSteps.map(()=>'<span class="done"></span>').join("");
+    $("lessonNextBtn").disabled = true;
+    $("lessonPrevBtn").disabled = true;
+    return;
+  }
+  $("lessonNextBtn").disabled = false;
+  lessonStep = Math.max(0,Math.min(lessonSteps.length-1,lessonStep+delta));
+  renderLesson();
+}
+$("startLessonBtn").addEventListener("click",startLesson);
+$("closeLessonBtn").addEventListener("click",closeLesson);
+$("lessonPrevBtn").addEventListener("click",()=>moveLesson(-1));
+$("lessonNextBtn").addEventListener("click",()=>moveLesson(1));
+$("lessonContent").addEventListener("click",e=>{
+  const word=e.target.closest("[data-lesson-word]");
+  if(word){setWord(word.dataset.lessonWord);speak(word.dataset.lessonWord);}
+  if(e.target.closest("#lessonSpeakSentence")) speak(zoneData().sentences[0][2].split(" / ")[0]);
+  if(e.target.closest("#lessonSpeakPrompt")) speak($("teacherQuestion").textContent);
+  if(e.target.closest("#lessonDoAction")) performAction(zoneData().actions[0][0]);
+  if(e.target.closest("#lessonGoQuiz")) $("quizQuestion").scrollIntoView({behavior:"smooth",block:"center"});
+  if(e.target.closest("#lessonRestart")){lessonStep=0;$("lessonNextBtn").disabled=false;renderLesson();}
+  if(e.target.closest("#lessonCloseDone")) closeLesson();
+});
+
+/* Event delegation: all scene hotspots, word cards, quizzes and actions belong
+   to the current scene, so vocabulary never falls back to the basketball list. */
+document.querySelector(".tabs").addEventListener("click", e => {
+  const btn = e.target.closest("[data-zone]");
+  if(btn) switchZone(btn.dataset.zone);
+});
+$("scene").addEventListener("click", e => {
+  const node = e.target.closest("[data-word]");
+  if(node && $("scene").contains(node)) setWord(node.dataset.word);
+});
+$("scene").addEventListener("keydown", e => {
+  if((e.key === "Enter" || e.key === " ") && e.target.matches("[data-word]")){
+    e.preventDefault(); setWord(e.target.dataset.word);
+  }
+});
+$("actionBar").addEventListener("click", e => {
+  const btn = e.target.closest("[data-action]");
+  if(btn) performAction(btn.dataset.action);
+});
+$("vocabGrid").addEventListener("click", e => {
+  const btn = e.target.closest("[data-vocab]");
+  if(btn) setWord(btn.dataset.vocab);
+});
+$("answers").addEventListener("click", e => {
+  const btn = e.target.closest("[data-answer]");
+  if(btn) answerQuiz(Number(btn.dataset.answer));
+  if(e.target.closest("#restartQuiz")) restartQuiz();
+});
+$("speakWordBtn").addEventListener("click", () => speak($("wordCn").textContent));
+$("nextWordBtn").addEventListener("click", nextWord);
+$("nextQuestionBtn").addEventListener("click", nextQuestion);
+$("speakQuestionBtn").addEventListener("click", () => speak($("teacherQuestion").textContent));
+
+switchZone("basketball");
+</script>
+</body>
+</html>
